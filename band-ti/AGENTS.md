@@ -13,3 +13,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - The selected visual direction is the first concept: a desktop editorial layout with warm off-white paper, black typography, and a restrained cherry-red accent.
 - The primary flow is a 20-question personality quiz that returns one character from the local 67-character girl-band-anime catalog.
 - Use the downloaded local official character art from `public/assets/characters/`; do not replace it with generated art.
+- Maintain a 48-question categorized bank and draw a balanced 20-question session for each run.
+- The result flow includes expanded matching context, a QR code back to the test, and a locally generated share poster using the existing official character art. Do not use AI-generated replacement artwork.
