@@ -1806,3 +1806,426 @@ img {
     transition: none;
   }
 }
+
+/* mirror-test roster and community extension */
+.band-language-control {
+  display: inline-flex;
+  align-items: center;
+}
+
+.band-language-control select {
+  min-height: 32px;
+  padding: 0 26px 0 10px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.band-language-control select:focus-visible,
+.hero-roster-card:focus-visible,
+.character-card-link:focus-visible,
+.nearby-match:focus-visible,
+.more-tests-button:focus-visible {
+  outline: 2px solid #d9422e;
+  outline-offset: 3px;
+}
+
+.hero-art {
+  width: min(100%, 690px);
+  min-height: 680px;
+  padding: 54px 0 96px;
+}
+
+.hero-roster-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(220px, 1fr);
+  gap: 12px;
+  min-height: 525px;
+  padding: 0 18px;
+}
+
+.hero-roster-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid #171411;
+  background: #dfd4c5;
+  color: #fffdf8;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(18px) rotate(-0.7deg);
+  animation: roster-card-in 620ms cubic-bezier(0.2, 0.72, 0.24, 1) forwards;
+  animation-delay: var(--roster-delay, 0ms);
+}
+
+.hero-roster-card:nth-child(2n) {
+  background: #2a2622;
+  transform: translateY(18px) rotate(0.7deg);
+}
+
+.hero-roster-card:nth-child(3n) {
+  background: #d9422e;
+}
+
+.hero-roster-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: contain;
+  object-position: center bottom;
+  transition: transform 300ms ease;
+}
+
+.hero-roster-card:hover img {
+  transform: scale(1.045);
+}
+
+.hero-roster-card-meta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  gap: 2px;
+  padding: 10px;
+  background: rgba(23, 20, 17, 0.82);
+}
+
+.hero-roster-card-meta strong {
+  overflow: hidden;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero-roster-card-meta small {
+  overflow: hidden;
+  color: rgba(255, 253, 248, 0.74);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes roster-card-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.art-controls {
+  right: 0;
+  bottom: 8px;
+  left: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 18px;
+}
+
+.art-counter {
+  margin: 0;
+  color: #171411;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.art-control-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.art-control {
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid #171411;
+  background: #f5f0e6;
+  color: #171411;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.art-control:hover {
+  background: #171411;
+  color: #fffdf8;
+}
+
+.character-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.character-card-link:hover {
+  box-shadow: 0 10px 24px rgba(23, 20, 17, 0.11);
+}
+
+.character-card-copy small {
+  display: block;
+  margin-top: 10px;
+  color: #d9422e;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.footer-more-tests,
+.more-tests-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 14px;
+  border: 1px solid currentColor;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.more-tests-button {
+  border-color: #d9422e;
+  background: #d9422e;
+  color: #fffdf8;
+}
+
+.more-tests-button:hover {
+  background: #171411;
+  border-color: #171411;
+}
+
+.result-image-wiki {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.result-image-wiki > span {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 7px 9px;
+  background: #171411;
+  color: #fffdf8;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.nearby-list .nearby-match {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  background: #2a2622;
+  color: inherit;
+  text-decoration: none;
+}
+
+.nearby-match > div {
+  padding: 13px;
+}
+
+.nearby-match span {
+  display: inline-block;
+  margin-top: 10px;
+  color: #d9422e;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.contrast-panel a {
+  color: #c9c0b4;
+  font-size: 11px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.contrast-panel a:hover {
+  color: #fffdf8;
+  text-decoration: underline;
+}
+
+.result-share-asides {
+  display: grid;
+  gap: 14px;
+}
+
+.result-community-card {
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 17px;
+  border: 1px solid #c8bcac;
+  background: #fffdf8;
+}
+
+.result-community-card > img {
+  width: 104px;
+  height: 104px;
+  object-fit: cover;
+  background: #fff;
+}
+
+.result-community-card p,
+.result-community-card strong,
+.result-community-card span {
+  display: block;
+  margin: 0;
+}
+
+.result-community-card p {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.result-community-card strong {
+  margin-top: 5px;
+  color: #d9422e;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 15px;
+}
+
+.result-community-card span {
+  margin-top: 7px;
+  color: #776e64;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.result-community-card button {
+  min-height: 30px;
+  margin-top: 10px;
+  padding: 5px 9px;
+  border: 1px solid #171411;
+  background: transparent;
+  color: #171411;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.result-community-card button:hover {
+  background: #171411;
+  color: #fffdf8;
+}
+
+.result-poster-codes {
+  display: flex;
+  gap: 14px;
+}
+
+.result-poster-community img {
+  background: #fff;
+}
+
+@media (max-width: 1000px) {
+  .hero-roster-grid {
+    min-height: 470px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header nav .band-language-control {
+    display: inline-flex;
+  }
+
+  .site-header nav .band-language-control select {
+    min-height: 28px;
+    padding-inline: 8px 20px;
+    font-size: 9px;
+  }
+
+  .header-meta .band-language-control select {
+    min-height: 28px;
+    padding-inline: 7px 18px;
+    font-size: 9px;
+  }
+
+  .hero-art {
+    min-height: 660px;
+    padding-top: 50px;
+  }
+
+  .hero-roster-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 154px;
+    gap: 8px;
+    min-height: 630px;
+    padding: 0;
+  }
+
+  .hero-roster-card img {
+    min-height: 154px;
+  }
+
+  .hero-roster-card-meta {
+    padding: 7px;
+  }
+
+  .hero-roster-card-meta strong {
+    font-size: 13px;
+  }
+
+  .art-controls {
+    bottom: -66px;
+    padding: 0;
+  }
+
+  .art-control-buttons {
+    justify-content: flex-start;
+  }
+
+  .art-control {
+    min-height: 30px;
+    font-size: 9px;
+  }
+
+  .result-community-card {
+    grid-template-columns: 84px minmax(0, 1fr);
+  }
+
+  .result-community-card > img {
+    width: 84px;
+    height: 84px;
+  }
+
+  .result-poster-codes {
+    gap: 9px;
+  }
+
+  .result-poster-qr img {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-roster-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}

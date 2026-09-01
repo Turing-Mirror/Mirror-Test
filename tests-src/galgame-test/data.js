@@ -19,7 +19,7 @@
   }
 
   window.GALGAME_TEST_DATA = {
-    publicUrl: "https://test.turingmirror.com/tests/galgame-test/",
+    publicUrl: "https://test.turingmirror.com/galgame-test/",
     questionCount: 15,
     traits: [
       { id: "romance", color: "#E75D7C", label: L("情感拉力", "Emotional pull", "感情の引力"), weight: 1.15 },

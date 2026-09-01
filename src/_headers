@@ -11,22 +11,22 @@
 /index.html
   Cache-Control: no-store
 
-/tests/anime-summer-2026/
+/anime-summer-2026/
   Cache-Control: no-store
 
-/tests/anime-summer-2026/index.html
+/anime-summer-2026/index.html
   Cache-Control: no-store
 
-/tests/galgame-test/
+/galgame-test/
   Cache-Control: no-store
 
-/tests/galgame-test/index.html
+/galgame-test/index.html
   Cache-Control: no-store
 
-/tests/band-ti/
+/band-ti/
   Cache-Control: no-store
 
-/tests/band-ti/index.html
+/band-ti/index.html
   Cache-Control: no-store
 
 /tests-manifest.json

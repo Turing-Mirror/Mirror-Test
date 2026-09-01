@@ -3,15 +3,15 @@ var currentLocale = localeApi.getLocale();
 var manifestState = {
   anime: {
     synced: true,
-    href: "/tests/anime-summer-2026/"
+    href: "/anime-summer-2026/"
   },
   galgame: {
     synced: true,
-    href: "/tests/galgame-test/"
+    href: "/galgame-test/"
   },
   bandTi: {
     synced: true,
-    href: "/tests/band-ti/"
+    href: "/band-ti/"
   }
 };
 var HERO_TYPEWRITER_LINES = [
@@ -46,7 +46,7 @@ var SITE_COPY = {
     heroMixedLine: "✧ Mirror-Test × 測驗索引 ✧",
     heroCopyTag: "-- 測驗集合 --",
     heroCopy: "先從已開放的測驗裡挑一頁開始，之後上線的新測驗也都會收在這裡。",
-    heroPrimaryAction: "查看測驗",
+    heroPrimaryAction: "更多測驗",
     heroSecondaryAction: "進入動漫測驗",
     heroHomeAction: "返回主頁",
     heroSecondaryPrefix: "進入",
@@ -55,8 +55,8 @@ var SITE_COPY = {
     heroFooterPrimary: "INTERACTIVE TEST INDEX",
     heroFooterSecondary: "互動測驗集合",
     heroSparkle: "☆ﾟ.*･｡ﾟ",
-    sectionKicker: "TEST INDEX",
-    sectionTitle: "目前開放",
+    sectionKicker: "MORE TESTS",
+    sectionTitle: "更多測驗",
     sectionNote: "現在能玩的測驗都在這裡，之後新頁面也會繼續往下加。",
     routeLabel: "ROUTE",
     sourceLabel: "SEASON",
@@ -94,7 +94,7 @@ var SITE_COPY = {
     heroMixedLine: "✧ Mirror-Test × 测验索引 ✧",
     heroCopyTag: "-- 测验集合 --",
     heroCopy: "先从已开放的测验里挑一页开始，之后上线的新测验也都会收在这里。",
-    heroPrimaryAction: "查看测验",
+    heroPrimaryAction: "更多测试",
     heroSecondaryAction: "进入动漫测验",
     heroHomeAction: "返回主页",
     heroSecondaryPrefix: "进入",
@@ -103,8 +103,8 @@ var SITE_COPY = {
     heroFooterPrimary: "INTERACTIVE TEST INDEX",
     heroFooterSecondary: "互动测验集合",
     heroSparkle: "☆ﾟ.*･｡ﾟ",
-    sectionKicker: "TEST INDEX",
-    sectionTitle: "目前开放",
+    sectionKicker: "MORE TESTS",
+    sectionTitle: "更多测试",
     sectionNote: "现在能玩的测验都在这里，之后新页面也会继续往下加。",
     routeLabel: "ROUTE",
     sourceLabel: "SEASON",
@@ -142,7 +142,7 @@ var SITE_COPY = {
     heroMixedLine: "✧ Mirror-Test × 測驗索引 ✧",
     heroCopyTag: "-- 測驗合集 --",
     heroCopy: "先從已開著の測驗裡挑壹頁開刷，後面新開の測驗也都會陸續收進這裡。",
-    heroPrimaryAction: "先看試題",
+    heroPrimaryAction: "更多試題",
     heroSecondaryAction: "進夏番測驗",
     heroHomeAction: "返主頁",
     heroSecondaryPrefix: "進入",
@@ -151,8 +151,8 @@ var SITE_COPY = {
     heroFooterPrimary: "INTERACTIVE TEST INDEX",
     heroFooterSecondary: "互動測驗合集",
     heroSparkle: "☆ﾟ.*･｡ﾟ",
-    sectionKicker: "TEST INDEX",
-    sectionTitle: "而家能玩の測驗",
+    sectionKicker: "MORE TESTS",
+    sectionTitle: "更多試題",
     sectionNote: "能玩の頁面都收在這裡，後面新測驗也會繼續補進來。",
     routeLabel: "ROUTE",
     sourceLabel: "SEASON",
@@ -190,7 +190,7 @@ var SITE_COPY = {
     heroMixedLine: "✧ Mirror-Test × 試頁總目 ✧",
     heroCopyTag: "-- 試頁總覽 --",
     heroCopy: "今可先擇已開之試而入，後續新試亦將續錄於此。",
-    heroPrimaryAction: "覽其諸試",
+    heroPrimaryAction: "更多試頁",
     heroSecondaryAction: "入夏番試",
     heroHomeAction: "返主頁",
     heroSecondaryPrefix: "入",
@@ -199,8 +199,8 @@ var SITE_COPY = {
     heroFooterPrimary: "INTERACTIVE TEST INDEX",
     heroFooterSecondary: "互動測驗總錄",
     heroSparkle: "☆ﾟ.*･｡ﾟ",
-    sectionKicker: "TEST INDEX",
-    sectionTitle: "今已開放之頁",
+    sectionKicker: "MORE TESTS",
+    sectionTitle: "更多試頁",
     sectionNote: "今可遊之試皆列於此，後續新頁亦將續補之。",
     routeLabel: "ROUTE",
     sourceLabel: "SEASON",
@@ -238,7 +238,7 @@ var SITE_COPY = {
     heroMixedLine: "Mirror-Test x TEST INDEX",
     heroCopyTag: "-- TEST CATALOG --",
     heroCopy: "Start from whichever live test fits your mood. New tests will keep landing here.",
-    heroPrimaryAction: "Browse Tests",
+    heroPrimaryAction: "More Tests",
     heroSecondaryAction: "Anime Test",
     heroHomeAction: "Back to Home",
     heroSecondaryPrefix: "Open ",
@@ -247,8 +247,8 @@ var SITE_COPY = {
     heroFooterPrimary: "INTERACTIVE TEST INDEX",
     heroFooterSecondary: "test collection",
     heroSparkle: "ARCHIVE MODE",
-    sectionKicker: "TEST INDEX",
-    sectionTitle: "Live Now",
+    sectionKicker: "MORE TESTS",
+    sectionTitle: "More Tests",
     sectionNote: "Everything playable right now sits here, and new tests will be added underneath.",
     routeLabel: "ROUTE",
     sourceLabel: "SEASON",
@@ -286,7 +286,7 @@ var SITE_COPY = {
     heroMixedLine: "✧ Mirror-Test × 試題索引 ✧",
     heroCopyTag: "-- 測驗集合 --",
     heroCopy: "先喺已開放嘅測驗入面揀一頁開始，之後新上線嗰啲都會繼續收埋喺度。",
-    heroPrimaryAction: "睇測驗",
+    heroPrimaryAction: "更多測驗",
     heroSecondaryAction: "入夏番測驗",
     heroHomeAction: "返主頁",
     heroSecondaryPrefix: "入",
@@ -295,8 +295,8 @@ var SITE_COPY = {
     heroFooterPrimary: "INTERACTIVE TEST INDEX",
     heroFooterSecondary: "互動測驗集合",
     heroSparkle: "☆ﾟ.*･｡ﾟ",
-    sectionKicker: "TEST INDEX",
-    sectionTitle: "而家開放緊",
+    sectionKicker: "MORE TESTS",
+    sectionTitle: "更多測驗",
     sectionNote: "而家玩得到嘅測驗都喺度，之後新頁都會繼續加落去。",
     routeLabel: "ROUTE",
     sourceLabel: "SEASON",
@@ -334,7 +334,7 @@ var SITE_COPY = {
     heroMixedLine: "Mirror-Test × テスト索引",
     heroCopyTag: "-- テスト一覧 --",
     heroCopy: "まずは公開中のテストから。今後の追加分もこのページに順次まとまります。",
-    heroPrimaryAction: "テストを見る",
+    heroPrimaryAction: "ほかのテスト",
     heroSecondaryAction: "アニメ診断へ",
     heroHomeAction: "ホームへ戻る",
     heroSecondaryPrefix: "",
@@ -343,7 +343,7 @@ var SITE_COPY = {
     heroFooterPrimary: "INTERACTIVE TEST INDEX",
     heroFooterSecondary: "テスト一覧",
     heroSparkle: "☆ﾟ.*･｡ﾟ",
-    sectionKicker: "TEST INDEX",
+    sectionKicker: "MORE TESTS",
     sectionTitle: "公開中のテスト",
     sectionNote: "いま遊べるテストをここにまとめています。追加分も順次ここへ入ります。",
     routeLabel: "ROUTE",
@@ -446,45 +446,55 @@ var BAND_TI_COPY = {
   tc: {
     title: "少女樂隊角色測驗",
     cta: "少女樂隊測驗",
-    description: "用 20 道選擇，從 67 名角色中找到與你此刻最同頻的少女樂隊角色。",
+    description: "從 100 道題庫均衡抽出 20 題，從 67 名角色中找到與你此刻最同頻的少女樂隊角色。",
     note: "涵蓋 8 部作品與 14 組樂隊或音樂組合。"
   },
   sc: {
     title: "少女乐队角色测试",
     cta: "少女乐队测试",
-    description: "用 20 个选择，从 67 名角色中找到与你此刻最同频的少女乐队角色。",
+    description: "从 100 道题库均衡抽出 20 题，从 67 名角色中找到与你此刻最同频的少女乐队角色。",
     note: "覆盖 8 部作品与 14 组乐队或音乐组合。"
   },
   hx: {
     title: "少女樂隊角色測驗",
     cta: "少女樂隊測驗",
-    description: "用 20 道選擇，喺 67 名角色入面搵到同伱而家最同頻の少女樂隊角色。",
+    description: "由 100 道題庫均衡抽 20 道，喺 67 名角色入面搵到同伱而家最同頻の少女樂隊角色。",
     note: "收錄 8 部作品同 14 組樂隊或者音樂組合。"
   },
   wy: {
     title: "少女樂隊角色之試",
     cta: "入少女樂隊試",
-    description: "以二十問之選，於六十七名角色中，求與汝今時最相契之少女樂隊角色。",
+    description: "百題之庫均取二十問，於六十七名角色中，求與汝今時最相契之少女樂隊角色。",
     note: "凡八部作品、十四組樂隊與音樂組合，悉列其中。"
   },
   en: {
     title: "Girl Band Character Quiz",
     cta: "Girl Band Quiz",
-    description: "Answer 20 questions and find the girl-band character whose sound matches you right now.",
+    description: "A 100-question bank selects 20 balanced prompts to find the girl-band character whose sound matches you right now.",
     note: "67 characters from 8 series and 14 bands or music units."
   },
   yue: {
     title: "少女樂隊角色測驗",
     cta: "少女樂隊測驗",
-    description: "用 20 道選擇，搵出同你而家最夾嘅少女樂隊角色。",
+    description: "由 100 道題庫平均抽 20 道，搵出同你而家最夾嘅少女樂隊角色。",
     note: "收錄 8 部作品同 14 組樂隊或者音樂組合。"
   },
   ja: {
     title: "ガールズバンドキャラクター診断",
     cta: "ガールズバンド診断",
-    description: "20問の選択から、今のあなたと一番響き合うガールズバンド作品のキャラクターを探します。",
+    description: "100問の問題バンクから均等に20問を選び、今のあなたと一番響き合うガールズバンド作品のキャラクターを探します。",
     note: "8作品、14バンド・音楽ユニット、67キャラクターを収録。"
   }
+};
+
+var CATALOG_EXTRAS_COPY = {
+  tc: { communityKicker: "COMMUNITY", communityTitle: "圖靈鏡 QQ 社群", communityText: "和其他測驗玩家交流結果、一起等新題庫。", communityNumber: "群號 1077458748", communityCopy: "複製群號", communityCopied: "已複製群號", communityQrAlt: "圖靈鏡 QQ 社群二維碼", promoKicker: "PROMOTION", promoTitle: "雨雲", promoText: "首月五折 · 性價比雲伺服器 / 遊戲雲 / 面板服", promoAction: "前往雨雲" },
+  sc: { communityKicker: "COMMUNITY", communityTitle: "图灵镜 QQ 社群", communityText: "和其他测试玩家交流结果，一起等新题库。", communityNumber: "群号 1077458748", communityCopy: "复制群号", communityCopied: "已复制群号", communityQrAlt: "图灵镜 QQ 社群二维码", promoKicker: "PROMOTION", promoTitle: "雨云", promoText: "首月五折 · 性价比云服务器 / 游戏云 / 面板服", promoAction: "前往雨云" },
+  hx: { communityKicker: "COMMUNITY", communityTitle: "圖靈鏡 QQ 社群", communityText: "同其他測驗玩家交流結果，等新題庫一齊開。", communityNumber: "群號 1077458748", communityCopy: "複製群號", communityCopied: "群號複製好惹", communityQrAlt: "圖靈鏡 QQ 社群二維碼", promoKicker: "PROMOTION", promoTitle: "雨雲", promoText: "首月五折 · 性價比雲伺服器 / 遊戲雲 / 面板服", promoAction: "去雨雲" },
+  wy: { communityKicker: "COMMUNITY", communityTitle: "圖靈鏡 QQ 社群", communityText: "可與諸試者交流結果，並候新題之續增。", communityNumber: "群號 1077458748", communityCopy: "複製群號", communityCopied: "群號已複製", communityQrAlt: "圖靈鏡 QQ 社群二維碼", promoKicker: "PROMOTION", promoTitle: "雨雲", promoText: "首月五折 · 雲伺服器 / 遊戲雲 / 面板服", promoAction: "往雨雲" },
+  en: { communityKicker: "COMMUNITY", communityTitle: "Turing Mirror QQ Community", communityText: "Compare results with other players and keep up with new question banks.", communityNumber: "Group 1077458748", communityCopy: "Copy group number", communityCopied: "Group number copied", communityQrAlt: "Turing Mirror QQ community QR code", promoKicker: "PROMOTION", promoTitle: "Rainyun", promoText: "50% off the first month · value cloud servers / game cloud / panel hosting", promoAction: "Visit Rainyun" },
+  yue: { communityKicker: "COMMUNITY", communityTitle: "圖靈鏡 QQ 社群", communityText: "同其他測驗玩家交流結果，一齊等新題庫。", communityNumber: "群號 1077458748", communityCopy: "複製群號", communityCopied: "已複製群號", communityQrAlt: "圖靈鏡 QQ 社群二維碼", promoKicker: "PROMOTION", promoTitle: "雨雲", promoText: "首月五折 · 性價比雲伺服器 / 遊戲雲 / 面板服", promoAction: "去雨雲" },
+  ja: { communityKicker: "COMMUNITY", communityTitle: "Turing Mirror QQ コミュニティ", communityText: "ほかの診断ユーザーと結果を共有し、新しい問題集の更新も追えます。", communityNumber: "グループ 1077458748", communityCopy: "番号をコピー", communityCopied: "番号をコピーしました", communityQrAlt: "Turing Mirror QQ コミュニティの QR コード", promoKicker: "PROMOTION", promoTitle: "Rainyun", promoText: "初月半額 · 高コスパのクラウドサーバー / ゲームクラウド / パネルホスティング", promoAction: "Rainyun へ" }
 };
 function currentCopy() {
   return SITE_COPY[currentLocale] || SITE_COPY.tc;
@@ -772,7 +782,7 @@ function buildTests(copy) {
     {
       title: copy.tests.anime.title,
       href: animeLive ? manifestState.anime.href : "",
-      route: "/tests/anime-summer-2026/",
+      route: "/anime-summer-2026/",
       source: "2026.07 / TV + FILM",
       repoHref: "https://github.com/Turing-Mirror/Mirror-Test",
       repoName: "github.com/Turing-Mirror/Mirror-Test",
@@ -785,7 +795,7 @@ function buildTests(copy) {
     {
       title: copy.tests.galgame.title,
       href: galgameLive ? manifestState.galgame.href : "",
-      route: "/tests/galgame-test/",
+      route: "/galgame-test/",
       source: "VN / GALGAME / RESULT LIBRARY",
       repoHref: "https://github.com/Turing-Mirror/Mirror-Test",
       repoName: "github.com/Turing-Mirror/Mirror-Test",
@@ -798,8 +808,8 @@ function buildTests(copy) {
     {
       title: bandTiCopy.title,
       href: bandTiLive ? manifestState.bandTi.href : "",
-      route: "/tests/band-ti/",
-      source: "GIRL BAND / 20 QUESTIONS / 67 CHARACTERS",
+      route: "/band-ti/",
+      source: "GIRL BAND / 100-QUESTION BANK / 67 CHARACTERS",
       repoHref: "https://github.com/Turing-Mirror/Mirror-Test",
       repoName: "github.com/Turing-Mirror/Mirror-Test",
       status: bandTiLive ? "live" : "pending",
@@ -816,6 +826,114 @@ function appendTextBlock(parent, className, text) {
   element.textContent = text;
   parent.appendChild(element);
   return element;
+}
+
+function copyTextToClipboard(value) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(value).then(function () { return true; }).catch(function () { return false; });
+  }
+
+  var textarea = document.createElement("textarea");
+  textarea.value = value;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  var copied = false;
+
+  try {
+    copied = document.execCommand("copy");
+  } catch {}
+
+  textarea.remove();
+  return Promise.resolve(copied);
+}
+
+function renderCatalogExtras() {
+  var container = document.getElementById("catalog-extras");
+  var copy = CATALOG_EXTRAS_COPY[currentLocale] || CATALOG_EXTRAS_COPY.sc;
+  var community;
+  var communityContent;
+  var communityKicker;
+  var communityTitle;
+  var communityText;
+  var communityNumber;
+  var communityCopy;
+  var communityQr;
+  var promotion;
+  var promotionContent;
+  var promotionKicker;
+  var promotionTitle;
+  var promotionText;
+  var promotionAction;
+
+  if (!container) { return; }
+
+  container.innerHTML = "";
+  community = document.createElement("section");
+  community.className = "catalog-extra catalog-community";
+  communityContent = document.createElement("div");
+  communityContent.className = "catalog-extra-content";
+  communityKicker = document.createElement("p");
+  communityKicker.className = "catalog-extra-kicker";
+  communityKicker.textContent = copy.communityKicker;
+  communityTitle = document.createElement("h3");
+  communityTitle.textContent = copy.communityTitle;
+  communityText = document.createElement("p");
+  communityText.className = "catalog-extra-text";
+  communityText.textContent = copy.communityText;
+  communityNumber = document.createElement("strong");
+  communityNumber.className = "catalog-community-number";
+  communityNumber.textContent = copy.communityNumber;
+  communityCopy = document.createElement("button");
+  communityCopy.type = "button";
+  communityCopy.className = "catalog-community-copy";
+  communityCopy.textContent = copy.communityCopy;
+  communityCopy.addEventListener("click", function () {
+    copyTextToClipboard("1077458748").then(function (copied) {
+      communityCopy.textContent = copied ? copy.communityCopied : copy.communityNumber;
+      window.setTimeout(function () { communityCopy.textContent = copy.communityCopy; }, 2200);
+    });
+  });
+  communityContent.appendChild(communityKicker);
+  communityContent.appendChild(communityTitle);
+  communityContent.appendChild(communityText);
+  communityContent.appendChild(communityNumber);
+  communityContent.appendChild(communityCopy);
+  communityQr = document.createElement("img");
+  communityQr.className = "catalog-community-qr";
+  communityQr.src = "/assets/qq_group.jpg";
+  communityQr.alt = copy.communityQrAlt;
+  communityQr.loading = "lazy";
+  community.appendChild(communityContent);
+  community.appendChild(communityQr);
+
+  promotion = document.createElement("section");
+  promotion.className = "catalog-extra catalog-promotion";
+  promotionContent = document.createElement("div");
+  promotionContent.className = "catalog-extra-content";
+  promotionKicker = document.createElement("p");
+  promotionKicker.className = "catalog-extra-kicker";
+  promotionKicker.textContent = copy.promoKicker;
+  promotionTitle = document.createElement("h3");
+  promotionTitle.textContent = copy.promoTitle;
+  promotionText = document.createElement("p");
+  promotionText.className = "catalog-extra-text";
+  promotionText.textContent = copy.promoText;
+  promotionAction = document.createElement("a");
+  promotionAction.className = "catalog-promotion-link";
+  promotionAction.href = "https://www.rainyun.com/m1rror_?s=RVC-Fabric";
+  promotionAction.target = "_blank";
+  promotionAction.rel = "noreferrer";
+  promotionAction.textContent = copy.promoAction;
+  promotionContent.appendChild(promotionKicker);
+  promotionContent.appendChild(promotionTitle);
+  promotionContent.appendChild(promotionText);
+  promotionContent.appendChild(promotionAction);
+  promotion.appendChild(promotionContent);
+  container.appendChild(community);
+  container.appendChild(promotion);
 }
 
 function getRandomLiveTest(tests) {
@@ -935,6 +1053,7 @@ function applyLocale() {
 
   applyStaticCopy(copy);
   renderTests();
+  renderCatalogExtras();
   queueHeroTypewriterFit();
   document.getElementById("lang-select").value = currentLocale;
 }
@@ -1079,15 +1198,15 @@ async function loadManifestState() {
     manifestState = {
       anime: {
         synced: !!(syncedAnime && syncedAnime.synced),
-        href: (syncedAnime && syncedAnime.href) || "/tests/anime-summer-2026/"
+        href: (syncedAnime && syncedAnime.href) || "/anime-summer-2026/"
       },
       galgame: {
         synced: !!(syncedGalgame && syncedGalgame.synced),
-        href: (syncedGalgame && syncedGalgame.href) || "/tests/galgame-test/"
+        href: (syncedGalgame && syncedGalgame.href) || "/galgame-test/"
       },
       bandTi: {
         synced: !!(syncedBandTi && syncedBandTi.synced),
-        href: (syncedBandTi && syncedBandTi.href) || "/tests/band-ti/"
+        href: (syncedBandTi && syncedBandTi.href) || "/band-ti/"
       }
     };
   } catch {}

@@ -390,7 +390,7 @@
       sh: "保存結果圖",
       ftr: "2026 夏季番你該追哪部",
       more: "更多測驗",
-      mirrorHome: "返回測試鏡",
+      mirrorHome: "更多測驗",
       prev: "上一題",
       verticalLeft: "アニメ性格診断",
       verticalRight: "二〇二六年夏",
@@ -441,7 +441,7 @@
       sh: "保存结果图",
       ftr: "2026 夏季番你该追哪部",
       more: "更多测验",
-      mirrorHome: "返回测试镜",
+      mirrorHome: "更多测试",
       prev: "上一题",
       verticalLeft: "动漫性格诊断",
       verticalRight: "二〇二六年夏",
@@ -492,7 +492,7 @@
       sh: "存結果圖",
       ftr: "2026 夏番伱這波該補哪部",
       more: "更多試題",
-      mirrorHome: "返測試鏡",
+      mirrorHome: "更多測驗",
       prev: "上壹題",
       verticalLeft: "夏番電波診斷",
       verticalRight: "二〇二六年夏",
@@ -543,7 +543,7 @@
       sh: "存其結果圖",
       ftr: "二〇二六夏番汝今當補何番",
       more: "更多試頁",
-      mirrorHome: "歸測試鏡",
+      mirrorHome: "更多試頁",
       prev: "上一題",
       verticalLeft: "動漫性格診",
       verticalRight: "二〇二六年夏",
@@ -594,7 +594,7 @@
       sh: "Save Card",
       ftr: "Summer 2026 Anime Match",
       more: "More Tests",
-      mirrorHome: "Test Hub",
+      mirrorHome: "More Tests",
       prev: "Previous",
       verticalLeft: "ANIME MATCH",
       verticalRight: "SUMMER 2026",
@@ -645,7 +645,7 @@
       sh: "存結果圖",
       ftr: "2026 夏番你今輪應該補邊套",
       more: "更多測驗",
-      mirrorHome: "返測試鏡",
+      mirrorHome: "更多測驗",
       prev: "上一題",
       verticalLeft: "動漫性格診斷",
       verticalRight: "二〇二六年夏",
@@ -696,7 +696,7 @@
       sh: "画像を保存",
       ftr: "2026 夏アニメ相性診断",
       more: "他のテスト",
-      mirrorHome: "テスト一覧へ",
+      mirrorHome: "ほかのテスト",
       prev: "前の設問",
       verticalLeft: "アニメ性格診断",
       verticalRight: "二〇二六年夏",
@@ -892,6 +892,19 @@
 
   Object.keys(UI_EXTENSIONS).forEach(function (locale) {
     Object.assign(UI[locale], UI_EXTENSIONS[locale]);
+  });
+  var COMMUNITY_COPY = {
+    tc: { communityLabel: "圖靈鏡 QQ 社群", communityNumber: "群號 1077458748", communityHint: "使用 QQ 掃碼加入社群，分享你的測驗結果。" },
+    sc: { communityLabel: "图灵镜 QQ 社群", communityNumber: "群号 1077458748", communityHint: "使用 QQ 扫码加入社群，分享你的测试结果。" },
+    hx: { communityLabel: "圖靈鏡 QQ 社群", communityNumber: "群號 1077458748", communityHint: "用 QQ 掃碼進群，分享伱の測驗結果。" },
+    wy: { communityLabel: "圖靈鏡 QQ 社群", communityNumber: "群號 1077458748", communityHint: "以 QQ 掃碼入群，可與諸人共話試果。" },
+    en: { communityLabel: "Turing Mirror QQ Community", communityNumber: "Group 1077458748", communityHint: "Scan with QQ to join the community and share your result." },
+    yue: { communityLabel: "圖靈鏡 QQ 社群", communityNumber: "群號 1077458748", communityHint: "用 QQ 掃碼入群，分享你嘅測驗結果。" },
+    ja: { communityLabel: "Turing Mirror QQ コミュニティ", communityNumber: "グループ 1077458748", communityHint: "QQ で QR コードを読み取り、結果をコミュニティで共有できます。" }
+  };
+
+  Object.keys(COMMUNITY_COPY).forEach(function (locale) {
+    Object.assign(UI[locale], COMMUNITY_COPY[locale]);
   });
 
   var WORK_TITLES = {

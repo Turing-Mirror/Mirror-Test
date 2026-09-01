@@ -4,10 +4,10 @@ Mirror-Test 是面向 test.turingmirror.com 的静态互动测试总仓。仓库
 
 ## 当前内容
 
-- /tests/anime-summer-2026/：2026 夏季番性格测试。
-- /tests/galgame-test/：GalGame 命定路线测试。
-- /tests/band-ti/：Band-TI 少女乐队角色测试，20 道题、67 名角色、8 部作品、14 组乐队或音乐组合。
-- /tests/galgame-match/：旧 GalGame 地址的兼容跳转。
+- /anime-summer-2026/：2026 夏季番性格测试。
+- /galgame-test/：GalGame 命定路线测试。
+- /band-ti/：Band-TI 少女乐队角色测试；100 道题库每轮均衡抽取 20 题，覆盖 67 名角色、8 部作品和 14 组乐队或音乐组合。
+- /tests/*：旧测试地址会以 301 跳转到对应的根路径入口。
 
 主页只展示以上三个正式入口。测试结果仅供娱乐，不代表真实人格判断。
 
@@ -31,7 +31,7 @@ npm run test:band-ti
 npm run dev
 ~~~
 
-构建输出位于 dist/。Band-TI 的构建结果会复制到 dist/tests/band-ti/，图片基路径会自动使用 /tests/band-ti/。
+构建输出位于 dist/。Band-TI 的构建结果会复制到 dist/band-ti/，图片基路径会自动使用 /band-ti/。旧 /tests/band-ti/ 地址保留 301 跳转。
 
 ## GitHub
 

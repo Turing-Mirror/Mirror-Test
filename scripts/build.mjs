@@ -13,9 +13,12 @@ const bandTiDistDir = path.join(bandTiDir, "dist", "client");
 const distDir = path.join(rootDir, "dist");
 const localAnimeDir = path.join(testsSrcDir, "anime-summer-2026");
 const localGalgameDir = path.join(testsSrcDir, "galgame-test");
-const animeRouteDir = path.join(distDir, "tests", "anime-summer-2026");
-const galgameRouteDir = path.join(distDir, "tests", "galgame-test");
-const bandTiRouteDir = path.join(distDir, "tests", "band-ti");
+const animeRouteDir = path.join(distDir, "anime-summer-2026");
+const galgameRouteDir = path.join(distDir, "galgame-test");
+const bandTiRouteDir = path.join(distDir, "band-ti");
+const legacyAnimeRouteDir = path.join(distDir, "tests", "anime-summer-2026");
+const legacyGalgameTestRouteDir = path.join(distDir, "tests", "galgame-test");
+const legacyBandTiRouteDir = path.join(distDir, "tests", "band-ti");
 const legacyGalgameRouteDir = path.join(distDir, "tests", "galgame-match");
 const syncOnly = process.argv.includes("--sync-only");
 const buildVersion = Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 8);
@@ -167,6 +170,7 @@ async function syncAnimeRoute() {
   await removeAndRecreate(animeRouteDir);
   await copyDir(localAnimeDir, animeRouteDir, includeSiblingEntry);
   await removeExcludedAnimeAssets();
+  await writeRedirectPage(legacyAnimeRouteDir, "/anime-summer-2026/");
   return { available: true };
 }
 
@@ -174,7 +178,8 @@ async function syncGalgameRoute() {
   await fs.access(localGalgameDir);
   await removeAndRecreate(galgameRouteDir);
   await copyDir(localGalgameDir, galgameRouteDir, includeSiblingEntry);
-  await writeRedirectPage(legacyGalgameRouteDir, "/tests/galgame-test/");
+  await writeRedirectPage(legacyGalgameTestRouteDir, "/galgame-test/");
+  await writeRedirectPage(legacyGalgameRouteDir, "/galgame-test/");
   return { available: true };
 }
 
@@ -202,6 +207,7 @@ async function buildBandTiRoute() {
   await fs.access(bandTiDistDir);
   await removeAndRecreate(bandTiRouteDir);
   await copyDir(bandTiDistDir, bandTiRouteDir);
+  await writeRedirectPage(legacyBandTiRouteDir, "/band-ti/");
   return { available: true };
 }
 
@@ -225,21 +231,21 @@ async function main() {
       {
         slug: "anime-summer-2026",
         name: "2026 夏季番性格測驗",
-        href: "/tests/anime-summer-2026/",
+        href: "/anime-summer-2026/",
         source: "tests-src/anime-summer-2026",
         synced: animeStatus.available
       },
       {
         slug: "galgame-test",
         name: "GalGame 命定路線測驗",
-        href: "/tests/galgame-test/",
+        href: "/galgame-test/",
         source: "tests-src/galgame-test",
         synced: galgameStatus.available
       },
       {
         slug: "band-ti",
         name: "少女樂隊角色測驗",
-        href: "/tests/band-ti/",
+        href: "/band-ti/",
         source: "band-ti",
         synced: bandTiStatus.available
       }

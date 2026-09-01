@@ -1,0 +1,482 @@
+[
+  {
+    "id": "kon-yui",
+    "name": "平泽唯",
+    "moegirl_title": "平泽唯",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%B9%B3%E6%B3%BD%E5%94%AF",
+    "standalone_character_page": true
+  },
+  {
+    "id": "kon-mio",
+    "name": "秋山澪",
+    "moegirl_title": "秋山澪",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E7%A7%8B%E5%B1%B1%E6%BE%AA",
+    "standalone_character_page": true
+  },
+  {
+    "id": "kon-ritsu",
+    "name": "田井中律",
+    "moegirl_title": "田井中律",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E7%94%B0%E4%BA%95%E4%B8%AD%E5%BE%8B",
+    "standalone_character_page": true
+  },
+  {
+    "id": "kon-tsumugi",
+    "name": "琴吹紬",
+    "moegirl_title": "琴吹紬",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E7%90%B4%E5%90%B9%E7%B4%AC",
+    "standalone_character_page": true
+  },
+  {
+    "id": "kon-azusa",
+    "name": "中野梓",
+    "moegirl_title": "中野梓",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%B8%AD%E9%87%8E%E6%A2%93",
+    "standalone_character_page": true
+  },
+  {
+    "id": "poppa-kasumi",
+    "name": "户山香澄",
+    "moegirl_title": "户山香澄",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%88%B7%E5%B1%B1%E9%A6%99%E6%BE%84",
+    "standalone_character_page": true
+  },
+  {
+    "id": "poppa-tae",
+    "name": "花园多惠",
+    "moegirl_title": "花园多惠",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E8%8A%B1%E5%9B%AD%E5%A4%9A%E6%83%A0",
+    "standalone_character_page": true
+  },
+  {
+    "id": "poppa-rimi",
+    "name": "牛込里美",
+    "moegirl_title": "牛込里美",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E7%89%9B%E8%BE%BC%E9%87%8C%E7%BE%8E",
+    "standalone_character_page": true
+  },
+  {
+    "id": "poppa-saaya",
+    "name": "山吹沙绫",
+    "moegirl_title": "山吹沙绫",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%B1%B1%E5%90%B9%E6%B2%99%E7%BB%AB",
+    "standalone_character_page": true
+  },
+  {
+    "id": "poppa-arisa",
+    "name": "市谷有咲",
+    "moegirl_title": "市谷有咲",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%B8%82%E8%B0%B7%E6%9C%89%E5%92%B2",
+    "standalone_character_page": true
+  },
+  {
+    "id": "mygo-tomori",
+    "name": "高松灯",
+    "moegirl_title": "高松灯",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E9%AB%98%E6%9D%BE%E7%81%AF",
+    "standalone_character_page": true
+  },
+  {
+    "id": "mygo-anon",
+    "name": "千早爱音",
+    "moegirl_title": "千早爱音",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%8D%83%E6%97%A9%E7%88%B1%E9%9F%B3",
+    "standalone_character_page": true
+  },
+  {
+    "id": "mygo-rana",
+    "name": "要乐奈",
+    "moegirl_title": "要乐奈",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E8%A6%81%E4%B9%90%E5%A5%88",
+    "standalone_character_page": true
+  },
+  {
+    "id": "mygo-soyo",
+    "name": "长崎爽世",
+    "moegirl_title": "长崎爽世",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E9%95%BF%E5%B4%8E%E7%88%BD%E4%B8%96",
+    "standalone_character_page": true
+  },
+  {
+    "id": "mygo-taki",
+    "name": "椎名立希",
+    "moegirl_title": "椎名立希",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%A4%8E%E5%90%8D%E7%AB%8B%E5%B8%8C",
+    "standalone_character_page": true
+  },
+  {
+    "id": "mujica-uika",
+    "name": "三角初华",
+    "moegirl_title": "三角初华",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%B8%89%E8%A7%92%E5%88%9D%E5%8D%8E",
+    "standalone_character_page": true
+  },
+  {
+    "id": "mujica-mutsumi",
+    "name": "若叶睦",
+    "moegirl_title": "若叶睦",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E8%8B%A5%E5%8F%B6%E7%9D%A6",
+    "standalone_character_page": true
+  },
+  {
+    "id": "mujica-umiri",
+    "name": "八幡海铃",
+    "moegirl_title": "八幡海铃",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%85%AB%E5%B9%A1%E6%B5%B7%E9%93%83",
+    "standalone_character_page": true
+  },
+  {
+    "id": "mujica-nyamu",
+    "name": "祐天寺若麦",
+    "moegirl_title": "祐天寺若麦",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E7%A5%90%E5%A4%A9%E5%AF%BA%E8%8B%A5%E9%BA%A6",
+    "standalone_character_page": true
+  },
+  {
+    "id": "mujica-sakiko",
+    "name": "丰川祥子",
+    "moegirl_title": "丰川祥子",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%B8%B0%E5%B7%9D%E7%A5%A5%E5%AD%90",
+    "standalone_character_page": true
+  },
+  {
+    "id": "bocchi-hitori",
+    "name": "后藤一里",
+    "moegirl_title": "后藤一里",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%90%8E%E8%97%A4%E4%B8%80%E9%87%8C",
+    "standalone_character_page": true
+  },
+  {
+    "id": "bocchi-nijika",
+    "name": "伊地知虹夏",
+    "moegirl_title": "伊地知虹夏",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%BC%8A%E5%9C%B0%E7%9F%A5%E8%99%B9%E5%A4%8F",
+    "standalone_character_page": true
+  },
+  {
+    "id": "bocchi-ryo",
+    "name": "山田凉",
+    "moegirl_title": "山田凉",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%B1%B1%E7%94%B0%E5%87%89",
+    "standalone_character_page": true
+  },
+  {
+    "id": "bocchi-ikuyo",
+    "name": "喜多郁代",
+    "moegirl_title": "喜多郁代",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%96%9C%E5%A4%9A%E9%83%81%E4%BB%A3",
+    "standalone_character_page": true
+  },
+  {
+    "id": "gbc-nina",
+    "name": "井芹仁菜",
+    "moegirl_title": "井芹仁菜",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%BA%95%E8%8A%B9%E4%BB%81%E8%8F%9C",
+    "standalone_character_page": true
+  },
+  {
+    "id": "gbc-momoka",
+    "name": "河原木桃香",
+    "moegirl_title": "河原木桃香",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%B2%B3%E5%8E%9F%E6%9C%A8%E6%A1%83%E9%A6%99",
+    "standalone_character_page": true
+  },
+  {
+    "id": "gbc-subaru",
+    "name": "安和昴",
+    "moegirl_title": "安和昴",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%AE%89%E5%92%8C%E6%98%B4",
+    "standalone_character_page": true
+  },
+  {
+    "id": "gbc-tomo",
+    "name": "海老塚智",
+    "moegirl_title": "海老塚智",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%B5%B7%E8%80%81%E5%A1%9A%E6%99%BA",
+    "standalone_character_page": true
+  },
+  {
+    "id": "gbc-rupa",
+    "name": "Rupa",
+    "moegirl_title": "RUPA",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/RUPA",
+    "standalone_character_page": true,
+    "note": "Band-TI 显示名为「Rupa」，萌百条目名为「RUPA」。"
+  },
+  {
+    "id": "jelee-mahiru",
+    "name": "光月真昼",
+    "moegirl_title": "光月真昼",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%85%89%E6%9C%88%E7%9C%9F%E6%98%BC",
+    "standalone_character_page": true
+  },
+  {
+    "id": "jelee-kano",
+    "name": "山之内花音",
+    "moegirl_title": "山之内花音",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%B1%B1%E4%B9%8B%E5%86%85%E8%8A%B1%E9%9F%B3",
+    "standalone_character_page": true
+  },
+  {
+    "id": "jelee-kiui",
+    "name": "渡濑喜优",
+    "moegirl_title": "渡濑季初",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%B8%A1%E6%BF%91%E5%AD%A3%E5%88%9D",
+    "standalone_character_page": true,
+    "note": "Band-TI 显示名为「渡濑喜优」，萌百条目名为「渡濑季初」。"
+  },
+  {
+    "id": "jelee-mei",
+    "name": "高梨·金·阿努克·芽衣",
+    "moegirl_title": "高梨·金·阿努克·芽衣",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E9%AB%98%E6%A2%A8%C2%B7%E9%87%91%C2%B7%E9%98%BF%E5%8A%AA%E5%85%8B%C2%B7%E8%8A%BD%E8%A1%A3",
+    "standalone_character_page": true
+  },
+  {
+    "id": "rocklady-lilisa",
+    "name": "铃之宫莉莉纱",
+    "moegirl_title": "摇滚乃是淑女的爱好",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%91%87%E6%BB%9A%E4%B9%83%E6%98%AF%E6%B7%91%E5%A5%B3%E7%9A%84%E7%88%B1%E5%A5%BD",
+    "standalone_character_page": false,
+    "note": "截至 2026-09-01 未检索到独立角色条目，暂链接到作品页。"
+  },
+  {
+    "id": "rocklady-otoha",
+    "name": "黑铁音羽",
+    "moegirl_title": "摇滚乃是淑女的爱好",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%91%87%E6%BB%9A%E4%B9%83%E6%98%AF%E6%B7%91%E5%A5%B3%E7%9A%84%E7%88%B1%E5%A5%BD",
+    "standalone_character_page": false,
+    "note": "截至 2026-09-01 未检索到独立角色条目，暂链接到作品页。"
+  },
+  {
+    "id": "rocklady-tina",
+    "name": "院濑见蒂娜",
+    "moegirl_title": "摇滚乃是淑女的爱好",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%91%87%E6%BB%9A%E4%B9%83%E6%98%AF%E6%B7%91%E5%A5%B3%E7%9A%84%E7%88%B1%E5%A5%BD",
+    "standalone_character_page": false,
+    "note": "截至 2026-09-01 未检索到独立角色条目，暂链接到作品页。"
+  },
+  {
+    "id": "rocklady-tamaki",
+    "name": "白矢环",
+    "moegirl_title": "摇滚乃是淑女的爱好",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%91%87%E6%BB%9A%E4%B9%83%E6%98%AF%E6%B7%91%E5%A5%B3%E7%9A%84%E7%88%B1%E5%A5%BD",
+    "standalone_character_page": false,
+    "note": "截至 2026-09-01 未检索到独立角色条目，暂链接到作品页。"
+  },
+  {
+    "id": "afterglow-ran",
+    "name": "美竹兰",
+    "moegirl_title": "美竹兰",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E7%BE%8E%E7%AB%B9%E5%85%B0",
+    "standalone_character_page": true
+  },
+  {
+    "id": "afterglow-moca",
+    "name": "青叶摩卡",
+    "moegirl_title": "青叶摩卡",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E9%9D%92%E5%8F%B6%E6%91%A9%E5%8D%A1",
+    "standalone_character_page": true
+  },
+  {
+    "id": "afterglow-himari",
+    "name": "上原绯玛丽",
+    "moegirl_title": "上原绯玛丽",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%B8%8A%E5%8E%9F%E7%BB%AF%E7%8E%9B%E4%B8%BD",
+    "standalone_character_page": true
+  },
+  {
+    "id": "afterglow-tomoe",
+    "name": "宇田川巴",
+    "moegirl_title": "宇田川巴",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%AE%87%E7%94%B0%E5%B7%9D%E5%B7%B4",
+    "standalone_character_page": true
+  },
+  {
+    "id": "afterglow-tsugumi",
+    "name": "羽泽鸫",
+    "moegirl_title": "羽泽鸫",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E7%BE%BD%E6%B3%BD%E9%B8%AB",
+    "standalone_character_page": true
+  },
+  {
+    "id": "paspale-aya",
+    "name": "丸山彩",
+    "moegirl_title": "丸山彩",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%B8%B8%E5%B1%B1%E5%BD%A9",
+    "standalone_character_page": true
+  },
+  {
+    "id": "paspale-hina",
+    "name": "冰川日菜",
+    "moegirl_title": "冰川日菜",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%86%B0%E5%B7%9D%E6%97%A5%E8%8F%9C",
+    "standalone_character_page": true
+  },
+  {
+    "id": "paspale-chisato",
+    "name": "白鹭千圣",
+    "moegirl_title": "白鹭千圣",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E7%99%BD%E9%B9%AD%E5%8D%83%E5%9C%A3",
+    "standalone_character_page": true
+  },
+  {
+    "id": "paspale-maya",
+    "name": "大和麻弥",
+    "moegirl_title": "大和麻弥",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%A4%A7%E5%92%8C%E9%BA%BB%E5%BC%A5",
+    "standalone_character_page": true
+  },
+  {
+    "id": "paspale-eve",
+    "name": "若宫伊芙",
+    "moegirl_title": "若宫伊芙",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E8%8B%A5%E5%AE%AB%E4%BC%8A%E8%8A%99",
+    "standalone_character_page": true
+  },
+  {
+    "id": "roselia-yukina",
+    "name": "凑友希那",
+    "moegirl_title": "凑友希那",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%87%91%E5%8F%8B%E5%B8%8C%E9%82%A3",
+    "standalone_character_page": true
+  },
+  {
+    "id": "roselia-sayo",
+    "name": "冰川纱夜",
+    "moegirl_title": "冰川纱夜",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%86%B0%E5%B7%9D%E7%BA%B1%E5%A4%9C",
+    "standalone_character_page": true
+  },
+  {
+    "id": "roselia-lisa",
+    "name": "今井莉莎",
+    "moegirl_title": "今井莉莎",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%BB%8A%E4%BA%95%E8%8E%89%E8%8E%8E",
+    "standalone_character_page": true
+  },
+  {
+    "id": "roselia-ako",
+    "name": "宇田川亚子",
+    "moegirl_title": "宇田川亚子",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%AE%87%E7%94%B0%E5%B7%9D%E4%BA%9A%E5%AD%90",
+    "standalone_character_page": true
+  },
+  {
+    "id": "roselia-rinko",
+    "name": "白金燐子",
+    "moegirl_title": "白金燐子",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E7%99%BD%E9%87%91%E7%87%90%E5%AD%90",
+    "standalone_character_page": true
+  },
+  {
+    "id": "hhw-kokoro",
+    "name": "弦卷心",
+    "moegirl_title": "弦卷心",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%BC%A6%E5%8D%B7%E5%BF%83",
+    "standalone_character_page": true
+  },
+  {
+    "id": "hhw-kaoru",
+    "name": "濑田薰",
+    "moegirl_title": "濑田薰",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%BF%91%E7%94%B0%E8%96%B0",
+    "standalone_character_page": true
+  },
+  {
+    "id": "hhw-hagumi",
+    "name": "北泽育美",
+    "moegirl_title": "北泽育美",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%8C%97%E6%B3%BD%E8%82%B2%E7%BE%8E",
+    "standalone_character_page": true
+  },
+  {
+    "id": "hhw-kanon",
+    "name": "松原花音",
+    "moegirl_title": "松原花音",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%9D%BE%E5%8E%9F%E8%8A%B1%E9%9F%B3",
+    "standalone_character_page": true
+  },
+  {
+    "id": "hhw-misaki",
+    "name": "奥泽美咲",
+    "moegirl_title": "奥泽美咲",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%A5%A5%E6%B3%BD%E7%BE%8E%E5%92%B2",
+    "standalone_character_page": true
+  },
+  {
+    "id": "ras-layer",
+    "name": "LAYER",
+    "moegirl_title": "和奏瑞依",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%92%8C%E5%A5%8F%E7%91%9E%E4%BE%9D",
+    "standalone_character_page": true,
+    "note": "Band-TI 显示名为「LAYER」，萌百条目名为「和奏瑞依」。"
+  },
+  {
+    "id": "ras-lock",
+    "name": "LOCK",
+    "moegirl_title": "朝日六花",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%9C%9D%E6%97%A5%E5%85%AD%E8%8A%B1",
+    "standalone_character_page": true,
+    "note": "Band-TI 显示名为「LOCK」，萌百条目名为「朝日六花」。"
+  },
+  {
+    "id": "ras-masking",
+    "name": "MASKING",
+    "moegirl_title": "佐藤益木",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%BD%90%E8%97%A4%E7%9B%8A%E6%9C%A8",
+    "standalone_character_page": true,
+    "note": "Band-TI 显示名为「MASKING」，萌百条目名为「佐藤益木」。"
+  },
+  {
+    "id": "ras-pareo",
+    "name": "PAREO",
+    "moegirl_title": "鳰原令王那",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E9%B3%B0%E5%8E%9F%E4%BB%A4%E7%8E%8B%E9%82%A3",
+    "standalone_character_page": true,
+    "note": "Band-TI 显示名为「PAREO」，萌百条目名为「鳰原令王那」。"
+  },
+  {
+    "id": "ras-chu2",
+    "name": "CHU²",
+    "moegirl_title": "珠手知由",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E7%8F%A0%E6%89%8B%E7%9F%A5%E7%94%B1",
+    "standalone_character_page": true,
+    "note": "Band-TI 显示名为「CHU²」，萌百条目名为「珠手知由」。"
+  },
+  {
+    "id": "morfonica-mashiro",
+    "name": "仓田真白",
+    "moegirl_title": "仓田真白",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%BB%93%E7%94%B0%E7%9C%9F%E7%99%BD",
+    "standalone_character_page": true
+  },
+  {
+    "id": "morfonica-toko",
+    "name": "桐谷透子",
+    "moegirl_title": "桐谷透子",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E6%A1%90%E8%B0%B7%E9%80%8F%E5%AD%90",
+    "standalone_character_page": true
+  },
+  {
+    "id": "morfonica-nanami",
+    "name": "广町七深",
+    "moegirl_title": "广町七深",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%B9%BF%E7%94%BA%E4%B8%83%E6%B7%B1",
+    "standalone_character_page": true
+  },
+  {
+    "id": "morfonica-tsukushi",
+    "name": "二叶筑紫",
+    "moegirl_title": "二叶筑紫",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E4%BA%8C%E5%8F%B6%E7%AD%91%E7%B4%AB",
+    "standalone_character_page": true
+  },
+  {
+    "id": "morfonica-rui",
+    "name": "八潮瑠唯",
+    "moegirl_title": "八潮瑠唯",
+    "moegirl_url": "https://zh.moegirl.org.cn/zh-hans/%E5%85%AB%E6%BD%AE%E7%91%A0%E5%94%AF",
+    "standalone_character_page": true
+  }
+]

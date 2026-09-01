@@ -21,7 +21,7 @@ npm run test:band-ti
 
 1. 复制 Mirror-Test 首页。
 2. 打包动漫测试和 GalGame 测试。
-3. 调用 Band-TI workspace 构建，并把其客户端输出复制到 /tests/band-ti/。
+3. 调用 Band-TI workspace 构建，并把其客户端输出复制到 /band-ti/。
 4. 生成 tests-manifest.json 和 build-meta.json。
 5. 检查 HTML 中不存在空的 src 属性。
 
@@ -38,10 +38,10 @@ cf:project:create 只需要首次创建 Pages 项目时执行。部署脚本使�
 ## 路由
 
 - /：Mirror-Test 首页。
-- /tests/anime-summer-2026/：2026 夏季番测试。
-- /tests/galgame-test/：GalGame 测试。
-- /tests/band-ti/：Band-TI 少女乐队角色测试。
-- /tests/galgame-match/：兼容旧地址并跳转到 GalGame 测试。
+- /anime-summer-2026/：2026 夏季番测试。
+- /galgame-test/：GalGame 测试。
+- /band-ti/：Band-TI 少女乐队角色测试。
+- /tests/anime-summer-2026/、/tests/galgame-test/、/tests/band-ti/ 和 /tests/galgame-match/：以 301 兼容旧地址并跳转到相应根路径。
 
 ## 自定义域名与 DNS
 

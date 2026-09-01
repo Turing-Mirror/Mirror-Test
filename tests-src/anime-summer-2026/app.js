@@ -9,7 +9,7 @@
   var lastRanking = null;
   var questionCount = Math.min(QUIZ_DATA.questionCount || 15, QUIZ_DATA.questions.length);
   var traitLookup = {};
-  var TEST_PUBLIC_URL = "https://test.turingmirror.com/tests/anime-summer-2026/";
+  var TEST_PUBLIC_URL = "https://test.turingmirror.com/anime-summer-2026/";
   var exportCache = { key: "", blob: null };
   var previewObjectUrl = "";
   var motionQuery = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
@@ -1104,29 +1104,35 @@
 
   function waitForResultAssets() {
     return new Promise(function (resolve) {
-      var image = document.getElementById("result-img");
+      var images = Array.prototype.slice.call(document.querySelectorAll("#result-card img"));
+      var pending = images.filter(function (image) {
+        return image && image.src && !image.complete;
+      });
+      var remaining = pending.length;
       var settled = false;
 
       function done() {
-        if (settled) {
-          return;
-        }
-
+        if (settled) { return; }
         settled = true;
         resolve();
       }
 
-      if (!image || !image.src || image.complete) {
+      if (!remaining) {
         window.setTimeout(done, 40);
         return;
       }
 
-      image.addEventListener("load", done, { once: true });
-      image.addEventListener("error", done, { once: true });
+      pending.forEach(function (image) {
+        function settleImage() {
+          remaining -= 1;
+          if (remaining <= 0) { done(); }
+        }
+        image.addEventListener("load", settleImage, { once: true });
+        image.addEventListener("error", settleImage, { once: true });
+      });
       window.setTimeout(done, 1200);
     });
   }
-
   function waitForFonts() {
     if (document.fonts && document.fonts.ready) {
       return document.fonts.ready.catch(function () {

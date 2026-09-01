@@ -13,5 +13,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - The selected visual direction is the first concept: a desktop editorial layout with warm off-white paper, black typography, and a restrained cherry-red accent.
 - The primary flow is a 20-question personality quiz that returns one character from the local 67-character girl-band-anime catalog.
 - Use the downloaded local official character art from `public/assets/characters/`; do not replace it with generated art.
-- Maintain a 48-question categorized bank and draw a balanced 20-question session for each run.
+- Maintain a 100-question, 10-category bank and draw exactly two questions from each category for every 20-question session. Keep the full 67-character roster rotating on the home page, link each character to its supplied Moegirl Wiki entry, and show the Turing Mirror QQ group (1077458748) plus its QR code in result sharing.
 - The result flow includes expanded matching context, a QR code back to the test, and a locally generated share poster using the existing official character art. Do not use AI-generated replacement artwork.

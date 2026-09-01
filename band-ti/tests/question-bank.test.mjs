@@ -3,8 +3,8 @@ import test from "node:test";
 import { QUESTION_COUNT, createQuestionSet, questionBank } from "../src/data/questions.js";
 
 test("keeps a broad categorized question bank", () => {
-  assert.equal(questionBank.length, 48);
-  assert.equal(new Set(questionBank.map((item) => item.category)).size, 6);
+  assert.equal(questionBank.length, 100);
+  assert.equal(new Set(questionBank.map((item) => item.category)).size, 10);
   assert.equal(new Set(questionBank.map((item) => item.id)).size, questionBank.length);
 
   for (const item of questionBank) {
@@ -29,6 +29,6 @@ test("creates deterministic balanced 20-question sessions", () => {
   for (const item of firstSet) {
     categoryCount.set(item.category, (categoryCount.get(item.category) || 0) + 1);
   }
-  assert.equal(categoryCount.size, 6);
-  assert.ok([...categoryCount.values()].every((count) => count >= 3));
+  assert.equal(categoryCount.size, 10);
+  assert.ok([...categoryCount.values()].every((count) => count === 2));
 });

@@ -1,0 +1,4 @@
+/tests/anime-summer-2026/* /anime-summer-2026/:splat 301
+/tests/galgame-test/* /galgame-test/:splat 301
+/tests/galgame-match/* /galgame-test/:splat 301
+/tests/band-ti/* /band-ti/:splat 301

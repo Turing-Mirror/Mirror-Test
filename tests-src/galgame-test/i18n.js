@@ -192,7 +192,7 @@
       repoLabel: "GitHub",
       start: "開始測驗 ▶",
       more: "更多測驗",
-      mirrorHome: "返回測試鏡",
+      mirrorHome: "更多測驗",
       scrollHint: "向下滑看更多",
       quizRoute: "QUESTION",
       prev: "上一題",
@@ -245,7 +245,7 @@
       repoLabel: "GitHub",
       start: "Start Quiz ▶",
       more: "More Tests",
-      mirrorHome: "Test Hub",
+      mirrorHome: "More Tests",
       scrollHint: "Scroll down for more",
       quizRoute: "QUESTION",
       prev: "Previous",
@@ -298,7 +298,7 @@
       repoLabel: "GitHub",
       start: "診断開始 ▶",
       more: "もっと見る",
-      mirrorHome: "テスト一覧へ",
+      mirrorHome: "ほかのテスト",
       scrollHint: "下へスクロール",
       quizRoute: "QUESTION",
       prev: "前の設問",
@@ -333,6 +333,21 @@
     }
   };
 
+  Object.assign(UI.tc, {
+    communityLabel: "圖靈鏡 QQ 社群",
+    communityNumber: "群號 1077458748",
+    communityHint: "使用 QQ 掃碼加入社群，分享你的測驗結果。"
+  });
+  Object.assign(UI.en, {
+    communityLabel: "Turing Mirror QQ Community",
+    communityNumber: "Group 1077458748",
+    communityHint: "Scan with QQ to join the community and share your result."
+  });
+  Object.assign(UI.ja, {
+    communityLabel: "Turing Mirror QQ コミュニティ",
+    communityNumber: "グループ 1077458748",
+    communityHint: "QQ で QR コードを読み取り、結果をコミュニティで共有できます。"
+  });
   function pick(value, locale) {
     var targetLocale = locale || "tc";
     var base = "";

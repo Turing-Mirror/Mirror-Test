@@ -1,5 +1,11 @@
 const answer = (label, values) => ({ label, values });
 const question = (id, category, prompt, options) => ({ id, category, prompt, options });
+const fourWay = (action, resonance, craft, intuition) => [
+  answer(action, [3, 1, 1, 1, 1]),
+  answer(resonance, [0, 3, 1, 0, 1]),
+  answer(craft, [1, 0, 3, 0, 2]),
+  answer(intuition, [1, 0, 0, 3, 1]),
+];
 
 export const QUESTION_COUNT = 20;
 
@@ -297,6 +303,328 @@ export const questionBank = [
     answer("比较风险与成本，做出能负责的决定", [0, 0, 3, 0, 2]),
     answer("先走一小段试试自己的感受", [1, 0, 0, 3, 1]),
   ]),
+
+  question("rehearsal-09", "rehearsal", "排练刚开始，大家的状态都很散，你会？", fourWay(
+    "先定一个最小目标，把第一段跑起来",
+    "先让大家说说今天各自卡在哪里",
+    "把流程、节拍和分工重新排清楚",
+    "换一首歌热身，找回想演奏的感觉",
+  )),
+  question("rehearsal-10", "rehearsal", "你更愿意在排练记录里留下什么？", fourWay(
+    "下一次必须马上试的行动项",
+    "每个人今天最有感觉的一刻",
+    "具体到小节和拍点的修正笔记",
+    "这次意外冒出来的新灵感",
+  )),
+
+  question("stage-09", "stage", "上台前你会把注意力放在？", fourWay(
+    "怎么把第一首的能量推给全场",
+    "和身边的人确认彼此都准备好了",
+    "最容易出错的衔接是否已检查完",
+    "今晚有什么只属于现场的可能",
+  )),
+  question("stage-10", "stage", "一场演出最让你想反复回想的是？", fourWay(
+    "全场一起被带动起来的瞬间",
+    "台上台下真正互相回应的瞬间",
+    "每个细节都准确落下的瞬间",
+    "原本没有计划却刚好发生的瞬间",
+  )),
+
+  question("connection-09", "connection", "朋友沉默很久却说没事时，你会？", fourWay(
+    "直接约她出来，先陪她做点事",
+    "告诉她不需要马上解释，我会在",
+    "留一条具体而不打扰的支持信息",
+    "用一份意外的小礼物打开话题",
+  )),
+  question("connection-10", "connection", "你们之间有一件小误会迟迟没说开，你会？", fourWay(
+    "主动约个时间把事情往前推",
+    "先确认对方会不会因此受伤",
+    "把事实和自己的想法整理后再谈",
+    "等一个自然的时机，从轻松处开始",
+  )),
+
+  question("creative-09", "creative", "写到一半发现作品和最初想象完全不同，你会？", fourWay(
+    "决定一个方向，继续把它做下去",
+    "问问合作的人现在最想保留什么",
+    "回看结构，找出变化从哪里开始",
+    "顺着新方向走，看看它会带到哪里",
+  )),
+  question("creative-10", "creative", "你最容易被哪种创作瞬间打动？", fourWay(
+    "有人把念头真的变成了现场",
+    "一句话刚好说出了很多人的心情",
+    "细节经过长期打磨后终于成形",
+    "一个意外组合忽然打开新世界",
+  )),
+
+  question("daily-09", "daily", "临时空出一个晚上，你更想？", fourWay(
+    "去做那件拖了很久的小计划",
+    "约重要的人慢慢吃顿饭",
+    "把生活里一件事收拾得更顺",
+    "不设目的地出门走走看",
+  )),
+  question("daily-10", "daily", "如果要给朋友准备一份支持，你会？", fourWay(
+    "帮她把眼前最急的事先解决",
+    "认真听她把话说完",
+    "做一份她真正用得上的清单",
+    "带她换个地方，给情绪透口气",
+  )),
+
+  question("resolve-09", "resolve", "一件事做了很久仍看不到结果，你会？", fourWay(
+    "调整做法后继续往前冲",
+    "找可信的人确认自己不是一个人",
+    "把过程拆开，找出真正的瓶颈",
+    "先停一下，看看是否有新出口",
+  )),
+  question("resolve-10", "resolve", "你希望未来的自己记得现在的什么？", fourWay(
+    "当时真的有勇气开始",
+    "有人和自己互相陪过",
+    "认真完成过一个重要细节",
+    "没有因为未知就放弃好奇",
+  )),
+
+  question("listening-01", "listening", "听到一首完全陌生的歌时，你先会注意？", fourWay(
+    "它有没有立刻把人带进情绪里",
+    "它像不像某个人正在认真说话",
+    "编曲和节奏里藏着哪些细节",
+    "它有没有带来没听过的感觉",
+  )),
+  question("listening-02", "listening", "一段歌词突然击中你，你更可能？", fourWay(
+    "立刻分享给朋友，想让她也听到",
+    "想起某个人，慢慢把它听完",
+    "回去研究它是怎样写出这句话的",
+    "顺着这首歌继续挖同类的新声音",
+  )),
+  question("listening-03", "listening", "朋友发来还没完成的 Demo，你会先？", fourWay(
+    "说出最想立刻帮她推进的部分",
+    "告诉她哪一瞬间最打动自己",
+    "给出具体而可执行的修改建议",
+    "想象它再大胆一点会是什么样",
+  )),
+  question("listening-04", "listening", "一首歌的现场版比录音室版更粗糙，你会觉得？", fourWay(
+    "只要能量更强，就值得反复听",
+    "只要情绪更真，瑕疵也很动人",
+    "想比较两版具体差在哪里",
+    "这种不确定反而很有现场魅力",
+  )),
+  question("listening-05", "listening", "你会怎样整理自己的歌单？", fourWay(
+    "按现在最想行动的节奏来排",
+    "按想起的人和共同回忆来排",
+    "按曲风、场景和听感细分来排",
+    "让不同风格意外地挨在一起",
+  )),
+  question("listening-06", "listening", "演出中某个安静段落来了，你希望它？", fourWay(
+    "蓄力后迅速把全场拉回来",
+    "让每个人都有被理解的空间",
+    "把最精巧的旋律听得一清二楚",
+    "像留白一样让想象自己发生",
+  )),
+  question("listening-07", "listening", "翻唱一首喜欢的歌时，你会优先？", fourWay(
+    "把它唱得更有冲劲、更像自己",
+    "保留原曲最真诚的情绪",
+    "还原最值得敬佩的结构与细节",
+    "改成一个没人预料到的版本",
+  )),
+  question("listening-08", "listening", "你更喜欢和朋友一起听歌的哪种状态？", fourWay(
+    "听到副歌就一起跟着唱",
+    "不用说话也知道对方听懂了",
+    "停下来讨论一个段落的设计",
+    "随机点开一首歌，看看会去哪",
+  )),
+  question("listening-09", "listening", "发现一个很小众的现场片段时，你会？", fourWay(
+    "马上收藏并推荐给可能喜欢的人",
+    "记住它带来的情绪，反复回看",
+    "查出演出版本和相关资料",
+    "顺着上传者继续探索陌生世界",
+  )),
+  question("listening-10", "listening", "如果一首歌只能留给你一个印象，你希望是？", fourWay(
+    "让我想立刻去做点什么",
+    "让我想起有人曾陪在身边",
+    "让我佩服它把每一步都做对了",
+    "让我觉得世界还能有新玩法",
+  )),
+
+  question("friction-01", "friction", "乐队为了歌单争执不下，你会？", fourWay(
+    "先定下一个可以立刻试的版本",
+    "让每个人先说清自己在意什么",
+    "列出不同方案的得失再判断",
+    "把两种想法拼成一个新版本",
+  )),
+  question("friction-02", "friction", "有人总是迟到，已经影响大家进度，你会？", fourWay(
+    "直接提出新的约定并执行",
+    "先了解她最近是不是遇到困难",
+    "记录具体影响，讨论可行排程",
+    "换一种更弹性的协作方式试试",
+  )),
+  question("friction-03", "friction", "你收到的建议很尖锐，但确实有道理，你会？", fourWay(
+    "挑最关键的一点立刻改起来",
+    "先消化情绪，不让任何人难堪",
+    "把建议拆成可验证的修改项",
+    "把它当作尝试新方向的契机",
+  )),
+  question("friction-04", "friction", "一个合作项目里职责变得模糊，你会？", fourWay(
+    "主动把下一步分派出去",
+    "确认每个人想承担和害怕的部分",
+    "写出清晰的职责与时间线",
+    "让大家先自由认领，看看新组合",
+  )),
+  question("friction-05", "friction", "你和伙伴的创作审美不同，你更想？", fourWay(
+    "做两个小样，马上比较听感",
+    "找出彼此真正想表达的情绪",
+    "从目标受众与结构角度逐项评估",
+    "让差异成为混搭的新风格",
+  )),
+  question("friction-06", "friction", "伙伴临时退出一件重要工作，你会？", fourWay(
+    "接过最急的部分，先让项目动起来",
+    "先问她是否需要被照顾和理解",
+    "重新估算范围、时间和替代方案",
+    "趁机把项目改成更轻巧的新形式",
+  )),
+  question("friction-07", "friction", "你讲完一个想法，现场忽然很安静，你会？", fourWay(
+    "主动追问，推动大家给出决定",
+    "给大家一点时间整理感受",
+    "补充细节和实例，让方案更清楚",
+    "把沉默当成留白，换个角度再说",
+  )),
+  question("friction-08", "friction", "有人对你的工作标准不满意，你会？", fourWay(
+    "马上问清楚要怎样才能推进",
+    "先不急着反驳，理解她的担心",
+    "要求明确标准，再逐项核对",
+    "提出另一套更有趣的完成方式",
+  )),
+  question("friction-09", "friction", "一次争论后，最重要的是？", fourWay(
+    "能尽快回到一起解决问题",
+    "没有人因此觉得自己被丢下",
+    "问题的根源被说清并留下共识",
+    "关系和作品都因此多了一种可能",
+  )),
+  question("friction-10", "friction", "队友明显累坏了却不愿停下，你会？", fourWay(
+    "先替她挡掉最急的压力",
+    "认真告诉她可以依靠大家",
+    "重新安排节奏，避免问题变大",
+    "建议短暂离开现场换个方式充电",
+  )),
+
+  question("recovery-01", "recovery", "一次重要演出失误后，你会怎样回到状态？", fourWay(
+    "尽快安排下一次练习，把手感找回来",
+    "和伙伴把失落说开，互相接住",
+    "复盘原因，给下一次留清单",
+    "去做一件完全不同的事换个脑子",
+  )),
+  question("recovery-02", "recovery", "前一晚没睡好，今天还有排练，你会？", fourWay(
+    "调整重点，先把最必要的部分做完",
+    "告诉大家自己状态一般，避免硬撑",
+    "把时间排得更保守，降低错误率",
+    "用轻松的即兴热身找回精神",
+  )),
+  question("recovery-03", "recovery", "做一件事很久没有新鲜感时，你会？", fourWay(
+    "给自己设一个立刻能完成的新目标",
+    "找朋友聊聊最初为什么喜欢它",
+    "回顾过程，找出到底哪里在消耗",
+    "暂时绕开它，去接触全新的刺激",
+  )),
+  question("recovery-04", "recovery", "你理想的休息日更像？", fourWay(
+    "完成一件小事后轻松下来",
+    "和安心的人不赶时间地相处",
+    "把房间、计划或材料整理好",
+    "完全不安排，跟着感觉走",
+  )),
+  question("recovery-05", "recovery", "被否定后，你最需要的安慰是？", fourWay(
+    "有人说我们下一步一起处理",
+    "有人愿意听完自己的委屈",
+    "有人帮忙确认问题并非无法解决",
+    "有人带自己离开原地看看别处",
+  )),
+  question("recovery-06", "recovery", "一个长期项目进入平台期，你会？", fourWay(
+    "主动做一个能打破僵局的小实验",
+    "找伙伴重新确认彼此的期待",
+    "把目标拆得更细，找出可优化处",
+    "允许自己偏离路线，探索旁支",
+  )),
+  question("recovery-07", "recovery", "忙完一段高压日程后，你会先？", fourWay(
+    "把积压的小事一口气清掉",
+    "约大家吃顿饭，庆祝彼此撑过来",
+    "整理这段时间的记录和收获",
+    "临时去一个没去过的地方走走",
+  )),
+  question("recovery-08", "recovery", "一个人练习时忽然觉得孤单，你会？", fourWay(
+    "给自己一个小挑战，把注意力拉回来",
+    "发消息给能理解这件事的人",
+    "录下来听一遍，找到可调整的地方",
+    "换一种演奏方法，让气氛变新鲜",
+  )),
+  question("recovery-09", "recovery", "上台前焦虑得很明显时，你会？", fourWay(
+    "做几件具体准备，把身体动起来",
+    "和伙伴确认眼神和呼吸都在一起",
+    "按清单检查，让不确定变少",
+    "把紧张当作灵感，写下一句话",
+  )),
+  question("recovery-10", "recovery", "有一个邀请很有趣，但你已没有余力，你会？", fourWay(
+    "明确拒绝，保住眼前最重要的事",
+    "真诚说明状态，不让对方误会",
+    "评估代价后给出可行的替代时间",
+    "先留一点空间，看看是否有新安排",
+  )),
+
+  question("vision-01", "vision", "想象五年后的乐队，你最希望它拥有？", fourWay(
+    "随时能把想法变成现场的行动力",
+    "成员之间仍然能放心说真话",
+    "更成熟稳定的作品完成度",
+    "永远不怕尝试新声音的自由",
+  )),
+  question("vision-02", "vision", "如果给乐队选一个象征，你会更偏向？", fourWay(
+    "正在燃烧的火种",
+    "能互相照见的微光",
+    "被反复磨亮的金属",
+    "通向未知的一扇门",
+  )),
+  question("vision-03", "vision", "收到一场很小但很特别的演出邀请，你会？", fourWay(
+    "马上答应，先把演出做出来",
+    "确认每个人对此都感到舒服",
+    "先了解场地、资源和准备周期",
+    "把它当作试验全新形式的机会",
+  )),
+  question("vision-04", "vision", "你心里最理想的一首原创歌应该？", fourWay(
+    "让人听完想真的去做点什么",
+    "像一封写给重要之人的信",
+    "从第一拍到最后一拍都经得起听",
+    "让人第一次听就不知道会发生什么",
+  )),
+  question("vision-05", "vision", "如果能亲自决定一张专辑封面，你会？", fourWay(
+    "做出一眼就能抓住人的画面",
+    "让它藏着只有熟悉的人懂的故事",
+    "把每种字体、比例和材质都打磨好",
+    "做成让人忍不住停下来的陌生感",
+  )),
+  question("vision-06", "vision", "对你而言，成功更接近？", fourWay(
+    "想做的事终于开始并影响了别人",
+    "重要的人因为自己感到被理解",
+    "一个目标被认真而完整地实现",
+    "生活始终留有选择新方向的余地",
+  )),
+  question("vision-07", "vision", "遇见很敬佩的创作者时，你最想问？", fourWay(
+    "你是怎样让想法真的落地的",
+    "你在最难的时候靠谁走过来",
+    "你怎样判断一个作品已经足够好",
+    "你下一次想试什么没人做过的事",
+  )),
+  question("vision-08", "vision", "想尝试陌生曲风时，你会？", fourWay(
+    "定一个小舞台，逼自己开始做",
+    "邀请最能互相支持的人一起试",
+    "先研究规则和参考作品再下手",
+    "不设太多边界，看看会长成什么",
+  )),
+  question("vision-09", "vision", "如果只能把一句话留给未来的听众，你会选？", fourWay(
+    "现在就去做你想做的事",
+    "你不是一个人，会有人听见",
+    "慢一点也没关系，把重要的做好",
+    "别急着定义自己，继续去发现",
+  )),
+  question("vision-10", "vision", "一个念头刚出现时，你通常会？", fourWay(
+    "马上写下第一步并开始行动",
+    "先想它会和谁产生连接",
+    "先评估怎么把它做得完整可靠",
+    "让它先在脑中自由生长一阵",
+  )),
 ];
 
 function createSeededRandom(seed) {
@@ -324,15 +652,15 @@ function shuffle(items, random) {
 
 export function createQuestionSet(seed = Date.now()) {
   const random = createSeededRandom(seed);
-  const categories = [...new Set(questionBank.map((item) => item.category))];
-  const coreQuestions = categories.flatMap((category) =>
-    shuffle(questionBank.filter((item) => item.category === category), random).slice(0, 3),
-  );
-  const chosenIds = new Set(coreQuestions.map((item) => item.id));
-  const remainingQuestions = shuffle(questionBank.filter((item) => !chosenIds.has(item.id)), random);
+  const categoryOrder = shuffle([...new Set(questionBank.map((item) => item.category))], random);
+  const perCategory = Math.floor(QUESTION_COUNT / categoryOrder.length);
+  const extraCategories = QUESTION_COUNT % categoryOrder.length;
 
   return shuffle(
-    [...coreQuestions, ...remainingQuestions.slice(0, QUESTION_COUNT - coreQuestions.length)],
+    categoryOrder.flatMap((category, index) =>
+      shuffle(questionBank.filter((item) => item.category === category), random)
+        .slice(0, perCategory + (index < extraCategories ? 1 : 0)),
+    ),
     random,
   );
 }
