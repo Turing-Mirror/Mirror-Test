@@ -2,12 +2,9 @@
 
 ## Source
 
-This repository's Summer 2026 anime test is based on:
+This repository's Summer 2026 anime test is based on an internally archived research note maintained before the Mirror-Test migration.
 
-- `/Users/kara/Code/material/26July-Anime-Test/result.md`
-- GitHub repository: [Kara251/26July-Anime-Test](https://github.com/Kara251/26July-Anime-Test)
-
-That file is the upstream research note used to define the candidate pool, screening rules, and recommendation dimensions for the test.
+That note defines the candidate pool, screening rules, and recommendation dimensions for the test.
 
 The live site no longer depends on the sibling project during build. The current in-repo implementation lives under `tests-src/anime-summer-2026/`.
 
@@ -93,5 +90,5 @@ These traits drive:
 ## Notes
 
 - This document is the normalized source-basis record for the repository.
-- The full upstream raw research remains archived in the sibling project at `/Users/kara/Code/material/26July-Anime-Test/result.md`.
+- The full raw research remains archived with the project history and is not a runtime or build dependency.
 - The current site repository is [Turing-Mirror/Mirror-Test](https://github.com/Turing-Mirror/Mirror-Test).
