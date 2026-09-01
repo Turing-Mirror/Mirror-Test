@@ -46,6 +46,9 @@ function Header({ onStart }) {
         <button type="button" onClick={() => scrollToSection("gallery")}>
           角色库
         </button>
+        <a className="nav-home" href="/">
+          返回测试镜
+        </a>
         <button className="nav-start" type="button" onClick={onStart}>
           开始测试
         </button>
@@ -204,9 +207,14 @@ function Quiz({ questionIndex, onAnswer, onExit }) {
           <span>GIRL BAND</span>
           <strong>角色测试</strong>
         </button>
-        <p>
-          第 {String(questionIndex + 1).padStart(2, "0")} 题 / 共 {questions.length} 题
-        </p>
+        <div className="header-meta">
+          <a className="header-home-link" href="/">
+            返回测试镜
+          </a>
+          <p>
+            第 {String(questionIndex + 1).padStart(2, "0")} 题 / 共 {questions.length} 题
+          </p>
+        </div>
       </header>
       <div className="progress-track" aria-label={"当前进度：" + (questionIndex + 1) + " / " + questions.length}>
         <span style={{ width: progress + "%" }} />
@@ -246,7 +254,12 @@ function Result({ result, onRestart, onHome }) {
           <span>GIRL BAND</span>
           <strong>角色测试</strong>
         </button>
-        <p>你的角色结果</p>
+        <div className="header-meta">
+          <a className="header-home-link" href="/">
+            返回测试镜
+          </a>
+          <p>你的角色结果</p>
+        </div>
       </header>
       <section className="result-hero" aria-labelledby="result-name">
         <div className="result-image-frame">

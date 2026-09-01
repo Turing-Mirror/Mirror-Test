@@ -96,13 +96,15 @@ img {
   gap: clamp(14px, 2vw, 30px);
 }
 
-.site-header nav button {
+.site-header nav button,
+.site-header nav a {
   padding: 7px 0;
   color: #171411;
   background: transparent;
   cursor: pointer;
   font-size: 14px;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .site-header nav .nav-start {
@@ -514,12 +516,27 @@ img {
   color: #fffdf8;
 }
 
-.quiz-header > p,
-.result-header > p {
+.header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.header-meta > p {
   margin: 0;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
+}
+
+.header-home-link {
+  padding: 6px 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
 }
 
 .progress-track {
@@ -945,8 +962,16 @@ img {
     padding: 20px 22px;
   }
 
-  .quiz-header > p {
+  .header-meta {
+    gap: 10px;
     padding-top: 5px;
+  }
+
+  .header-meta > p {
+    font-size: 10px;
+  }
+
+  .header-home-link {
     font-size: 10px;
   }
 
@@ -981,10 +1006,6 @@ img {
     padding: 20px 22px;
   }
 
-  .result-header > p {
-    padding-top: 5px;
-    font-size: 10px;
-  }
 
   .result-hero {
     width: min(100% - 44px, 600px);
