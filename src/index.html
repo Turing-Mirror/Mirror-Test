@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mirror-test-build" content="__BUILD_VERSION__">
+  <title>Mirror-Test</title>
+  <meta name="description" content="Mirror-Test 的互動測試首頁，集中展示目前可用與準備中的測試頁。">
+  <meta property="og:title" content="Mirror-Test">
+  <meta property="og:description" content="集中展示目前可用與準備中的互動測試頁。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=__BUILD_VERSION__">
+</head>
+<body>
+  <div class="lang-gate" id="lang-gate" aria-labelledby="lang-gate-title">
+    <div class="lang-gate-panel">
+      <div class="rule-double"></div>
+      <p class="lang-gate-kicker" data-copy="gateKicker">LANGUAGE INDEX</p>
+      <h2 class="lang-gate-title" id="lang-gate-title" data-copy="gateTitle">先選擇語言</h2>
+      <p class="lang-gate-subtitle" data-copy="gateSubtitle">選好後會進入首頁，右上角也能隨時切換。</p>
+      <div class="lang-gate-options" id="lang-gate-options"></div>
+      <p class="lang-gate-note" data-copy="gateNote">之後新增的測驗也會沿用同一套語言切換位置。</p>
+      <div class="rule-double"></div>
+    </div>
+  </div>
+
+  <div class="lang-control">
+    <label class="sr-only" for="lang-select">Language</label>
+    <select id="lang-select" class="lang-select" aria-label="Language"></select>
+  </div>
+
+  <div class="lang-guide-toast" id="lang-guide-toast" aria-live="polite" data-copy="gateToast">右上角可隨時切換語言</div>
+
+  <div class="marquee marquee-top" aria-hidden="true">
+    <div class="marquee-track" id="marquee-top-track"></div>
+  </div>
+
+  <main class="site-main">
+    <section class="hero-band">
+      <div class="hero-rail hero-rail-left" aria-hidden="true" data-copy="heroRailLeft">試験案内</div>
+      <div class="hero-rail hero-rail-right" aria-hidden="true" data-copy="heroRailRight">test.turingmirror.com</div>
+
+      <div class="hero-shell">
+        <div class="rule-double"></div>
+        <div class="hero-header">
+          <span class="hero-tag" data-copy="heroTag">号外 EXTRA</span>
+          <span class="hero-date" data-copy="heroDate">VOL. 01 ── MIRROR INDEX</span>
+        </div>
+        <div class="stripe"></div>
+        <div class="hero-mixed" aria-hidden="true" data-copy="heroMixedLine">✧ Mirror-Test × 測驗索引 ✧</div>
+
+        <div class="hero-title">
+          <h1 class="hero-typewriter" id="hero-typewriter-heading">
+            <span class="hero-typewriter-line" id="hero-typewriter-text" aria-hidden="true">测试，人格，喜爱。</span>
+            <span class="hero-typewriter-cursor" aria-hidden="true"></span>
+            <span class="hero-typewriter-measure" id="hero-typewriter-measure" aria-hidden="true"></span>
+            <span class="sr-only" id="hero-typewriter-a11y">测试，人格，喜爱。</span>
+          </h1>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="hero-copy">
+          <span class="hero-copy-tag" data-copy="heroCopyTag">── 測驗集合 ──</span>
+          <p data-copy="heroCopy">先從動漫人格測驗開始，之後上線的測驗也都會收在這裡。</p>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="#tests" data-copy="heroPrimaryAction">查看測驗</a>
+          <a class="btn-secondary" id="hero-random-action" href="/tests/anime-summer-2026/" data-copy="heroSecondaryAction">進入動漫測驗</a>
+          <a class="btn-secondary" href="https://kara251.com/" data-copy="heroHomeAction">返回主頁</a>
+        </div>
+
+        <div class="hero-meta">
+          <span data-copy="heroMetaDomain">DOMAIN: test.turingmirror.com</span>
+          <span data-copy="heroMetaRoute">CURRENT SEASON: SUMMER 2026</span>
+        </div>
+
+        <div class="hero-footer">
+          <span data-copy="heroFooterPrimary">INTERACTIVE TEST INDEX</span>
+          <span class="hero-footer-secondary" data-copy="heroFooterSecondary">互動測驗集合</span>
+        </div>
+        <div class="repo-links repo-links-single">
+          <a class="repo-link" href="https://github.com/Turing-Mirror/Mirror-Test" target="_blank" rel="noreferrer">
+            <span class="repo-link-label" data-copy="repoMirrorLabel">MIRROR 主站</span>
+            <span class="repo-link-value">github.com/Turing-Mirror/Mirror-Test</span>
+          </a>
+        </div>
+        <div class="rule-double"></div>
+        <div class="hero-sparkle" aria-hidden="true" data-copy="heroSparkle">☆ﾟ.*･｡ﾟ</div>
+      </div>
+    </section>
+
+    <section class="catalog-band" id="tests">
+      <div class="catalog-shell">
+        <div class="catalog-heading">
+          <div>
+            <p class="section-kicker" data-copy="sectionKicker">TEST INDEX</p>
+            <h2 data-copy="sectionTitle">目前可用與準備中的頁面</h2>
+          </div>
+          <p class="section-note" data-copy="sectionNote">先看目前能玩的，後續新增的測驗也都會從這裡進。</p>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="test-list" id="test-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="marquee marquee-bottom" aria-hidden="true">
+    <div class="marquee-track" id="marquee-bottom-track"></div>
+  </div>
+
+  <script src="/shared-mars.js?v=__BUILD_VERSION__" defer></script>
+  <script src="/shared-runtime.js?v=__BUILD_VERSION__" defer></script>
+  <script src="/shared-locale.js?v=__BUILD_VERSION__" defer></script>
+  <script src="/app.js?v=__BUILD_VERSION__" defer></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+
+/
+  Cache-Control: no-store
+
+/index.html
+  Cache-Control: no-store
+
+/tests/anime-summer-2026/
+  Cache-Control: no-store
+
+/tests/anime-summer-2026/index.html
+  Cache-Control: no-store
+
+/tests/galgame-test/
+  Cache-Control: no-store
+
+/tests/galgame-test/index.html
+  Cache-Control: no-store
+
+/tests/band-ti/
+  Cache-Control: no-store
+
+/tests/band-ti/index.html
+  Cache-Control: no-store
+
+/tests-manifest.json
+  Cache-Control: no-store
+
+/build-meta.json
+  Cache-Control: no-store

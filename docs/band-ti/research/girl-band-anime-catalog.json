@@ -1,0 +1,180 @@
+{
+  "catalogVersion": "2026-08-31",
+  "purpose": "Research-only source catalog for the girl-band anime character quiz.",
+  "artworkPolicy": {
+    "status": "local-official-assets-at-user-request",
+    "rule": "At the user's request, official character-page assets are downloaded into website/public/assets/characters and are served locally by this prototype. The site does not hotlink artwork at runtime. Character names, artwork, and related rights remain with their official rights holders."
+  },
+  "launchScope": {
+    "seriesCount": 8,
+    "unitCount": 14,
+    "characterCount": 67,
+    "coreCharacterCount": 37,
+    "notes": "The implementation includes the original eight work entries plus six additional BanG Dream! bands. Jellyfish Can't Swim in the Night is labeled as a creative music unit rather than a conventional band."
+  },
+  "series": [
+    {
+      "id": "k-on",
+      "title": "K-ON!",
+      "titleZh": "轻音少女！",
+      "unit": "放课后茶会",
+      "format": "girls-band",
+      "officialCharacterPage": "https://www.tbs.co.jp/anime/k-on/k-on_tv/chara/chara.html",
+      "characters": [
+        { "id": "k-on-yui", "name": "平泽唯", "nameJa": "平沢 唯", "role": "吉他／主唱", "officialArtworkSource": "https://www.tbs.co.jp/anime/k-on/k-on_tv/chara/chara.html" },
+        { "id": "k-on-mio", "name": "秋山澪", "nameJa": "秋山 澪", "role": "贝斯／主唱", "officialArtworkSource": "https://www.tbs.co.jp/anime/k-on/k-on_tv/chara/chara.html" },
+        { "id": "k-on-ritsu", "name": "田井中律", "nameJa": "田井中 律", "role": "鼓手", "officialArtworkSource": "https://www.tbs.co.jp/anime/k-on/k-on_tv/chara/chara.html" },
+        { "id": "k-on-tsumugi", "name": "琴吹䌷", "nameJa": "琴吹 紬", "role": "键盘", "officialArtworkSource": "https://www.tbs.co.jp/anime/k-on/k-on_tv/chara/chara.html" },
+        { "id": "k-on-azusa", "name": "中野梓", "nameJa": "中野 梓", "role": "吉他", "officialArtworkSource": "https://www.tbs.co.jp/anime/k-on/k-on_tv/chara/chara.html" }
+      ]
+    },
+    {
+      "id": "bang-dream-poppin-party",
+      "title": "BanG Dream!",
+      "titleZh": "BanG Dream!",
+      "unit": "Poppin'Party",
+      "format": "girls-band",
+      "officialCharacterPage": "https://anime.bang-dream.com/1st/character/",
+      "characters": [
+        { "id": "poppin-kasumi", "name": "户山香澄", "nameJa": "戸山 香澄", "role": "吉他／主唱", "officialArtworkSource": "https://anime.bang-dream.com/1st/assets/images/common/character_icon-kasumi.png" },
+        { "id": "poppin-tae", "name": "花园多惠", "nameJa": "花園 たえ", "role": "吉他", "officialArtworkSource": "https://anime.bang-dream.com/1st/assets/images/common/character_icon-tae.png" },
+        { "id": "poppin-rimi", "name": "牛込里美", "nameJa": "牛込 りみ", "role": "贝斯", "officialArtworkSource": "https://anime.bang-dream.com/1st/assets/images/common/character_icon-rimi.png" },
+        { "id": "poppin-saaya", "name": "山吹沙绫", "nameJa": "山吹 沙綾", "role": "鼓手", "officialArtworkSource": "https://anime.bang-dream.com/1st/assets/images/common/character_icon-saaya.png" },
+        { "id": "poppin-arisa", "name": "市谷有咲", "nameJa": "市ヶ谷 有咲", "role": "键盘", "officialArtworkSource": "https://anime.bang-dream.com/1st/assets/images/common/character_icon-arisa.png" }
+      ]
+    },
+    {
+      "id": "bang-dream-mygo",
+      "title": "BanG Dream! It's MyGO!!!!!",
+      "titleZh": "BanG Dream! It's MyGO!!!!!",
+      "unit": "MyGO!!!!!",
+      "format": "girls-band",
+      "officialCharacterPage": "https://anime.bang-dream.com/mygo/character/",
+      "characters": [
+        { "id": "mygo-tomori", "name": "高松灯", "nameJa": "高松 燈", "role": "主唱", "officialArtworkSource": "https://anime.bang-dream.com/mygo/wordpress/wp-content/themes/mygo_v1/assets/images/common/character/img_tomori.png" },
+        { "id": "mygo-anon", "name": "千早爱音", "nameJa": "千早 愛音", "role": "吉他", "officialArtworkSource": "https://anime.bang-dream.com/mygo/wordpress/wp-content/themes/mygo_v1/assets/images/common/character/img_anon.png" },
+        { "id": "mygo-rana", "name": "要乐奈", "nameJa": "要 楽奈", "role": "主音吉他", "officialArtworkSource": "https://anime.bang-dream.com/mygo/wordpress/wp-content/themes/mygo_v1/assets/images/common/character/img_rana.png" },
+        { "id": "mygo-soyo", "name": "长崎爽世", "nameJa": "長崎 そよ", "role": "贝斯", "officialArtworkSource": "https://anime.bang-dream.com/mygo/wordpress/wp-content/themes/mygo_v1/assets/images/common/character/img_soyo.png" },
+        { "id": "mygo-taki", "name": "椎名立希", "nameJa": "椎名 立希", "role": "鼓手", "officialArtworkSource": "https://anime.bang-dream.com/mygo/wordpress/wp-content/themes/mygo_v1/assets/images/common/character/img_taki.png" }
+      ]
+    },
+    {
+      "id": "bang-dream-ave-mujica",
+      "title": "BanG Dream! Ave Mujica",
+      "titleZh": "BanG Dream! Ave Mujica",
+      "unit": "Ave Mujica",
+      "format": "girls-band",
+      "officialCharacterPage": "https://anime.bang-dream.com/avemujica/character/",
+      "characters": [
+        { "id": "avemujica-uika", "name": "三角初华", "nameJa": "三角 初華", "role": "吉他／主唱", "officialArtworkSource": "https://anime.bang-dream.com/avemujica/wordpress/wp-content/themes/avemujica_0102/assets/images/common/character/thumb_uika.png" },
+        { "id": "avemujica-mutsumi", "name": "若叶睦", "nameJa": "若葉 睦", "role": "吉他", "officialArtworkSource": "https://anime.bang-dream.com/avemujica/wordpress/wp-content/themes/avemujica_0102/assets/images/common/character/thumb_mutsumi.png" },
+        { "id": "avemujica-umiri", "name": "八幡海铃", "nameJa": "八幡 海鈴", "role": "贝斯", "officialArtworkSource": "https://anime.bang-dream.com/avemujica/wordpress/wp-content/themes/avemujica_0102/assets/images/common/character/thumb_umiri.png" },
+        { "id": "avemujica-nyamu", "name": "祐天寺若麦", "nameJa": "祐天寺 にゃむ", "role": "鼓手", "officialArtworkSource": "https://anime.bang-dream.com/avemujica/wordpress/wp-content/themes/avemujica_0102/assets/images/common/character/thumb_nyamu.png" },
+        { "id": "avemujica-sakiko", "name": "丰川祥子", "nameJa": "豊川 祥子", "role": "键盘", "officialArtworkSource": "https://anime.bang-dream.com/avemujica/wordpress/wp-content/themes/avemujica_0102/assets/images/common/character/thumb_sakiko.png" }
+      ]
+    },
+    {
+      "id": "bocchi-the-rock",
+      "title": "Bocchi the Rock!",
+      "titleZh": "孤独摇滚！",
+      "unit": "结束乐队",
+      "format": "girls-band",
+      "officialCharacterPage": "https://bocchi.rocks/tv/character/",
+      "characters": [
+        { "id": "bocchi-hitori", "name": "后藤一里", "nameJa": "後藤 ひとり", "role": "主音吉他", "officialArtworkSource": "https://bocchi.rocks/tv/assets/img/page/character/hitori/main.png" },
+        { "id": "bocchi-nijika", "name": "伊地知虹夏", "nameJa": "伊地知 虹夏", "role": "鼓手", "officialArtworkSource": "https://bocchi.rocks/tv/assets/img/page/character/nijika/main.png" },
+        { "id": "bocchi-ryo", "name": "山田凉", "nameJa": "山田 リョウ", "role": "贝斯", "officialArtworkSource": "https://bocchi.rocks/tv/assets/img/page/character/ryo/main.png" },
+        { "id": "bocchi-ikuyo", "name": "喜多郁代", "nameJa": "喜多 郁代", "role": "吉他／主唱", "officialArtworkSource": "https://bocchi.rocks/tv/assets/img/page/character/ikuyo/main.png" }
+      ]
+    },
+    {
+      "id": "girls-band-cry",
+      "title": "Girls Band Cry",
+      "titleZh": "Girls Band Cry",
+      "unit": "Togenashi Togeari",
+      "format": "girls-band",
+      "officialCharacterPage": "https://girls-band-cry.com/character/",
+      "officialGroupArtwork": "https://girls-band-cry.com/wp-content/themes/gbc_v1-1/assets/webp/pc/character/img_set.webp",
+      "characters": [
+        { "id": "gbc-nina", "name": "井芹仁菜", "nameJa": "井芹 仁菜", "role": "主唱", "officialArtworkSource": "https://girls-band-cry.com/character/" },
+        { "id": "gbc-momoka", "name": "河原木桃香", "nameJa": "河原木 桃香", "role": "吉他", "officialArtworkSource": "https://girls-band-cry.com/character/" },
+        { "id": "gbc-subaru", "name": "安和昴", "nameJa": "安和 すばる", "role": "鼓手", "officialArtworkSource": "https://girls-band-cry.com/character/" },
+        { "id": "gbc-tomo", "name": "海老塚智", "nameJa": "海老塚 智", "role": "键盘", "officialArtworkSource": "https://girls-band-cry.com/character/" },
+        { "id": "gbc-rupa", "name": "Rupa", "nameJa": "ルパ", "role": "贝斯", "officialArtworkSource": "https://girls-band-cry.com/character/" }
+      ]
+    },
+    {
+      "id": "jellyfish-cant-swim-in-the-night",
+      "title": "Jellyfish Can't Swim in the Night",
+      "titleZh": "夜晚的水母不会游泳",
+      "unit": "JELEE",
+      "format": "creative-music-unit",
+      "officialCharacterPage": "https://yorukura-anime.com/",
+      "officialGroupArtwork": "https://yorukura-anime.com/assets/images/top/mainimg1.webp",
+      "characters": [
+        { "id": "jelee-mahiru", "name": "光月真昼", "nameJa": "光月 まひる", "role": "插画", "officialArtworkSource": "https://yorukura-anime.com/" },
+        { "id": "jelee-kano", "name": "山之内花音", "nameJa": "山ノ内 花音", "role": "主唱／作词", "officialArtworkSource": "https://yorukura-anime.com/" },
+        { "id": "jelee-kiui", "name": "渡濑喜优", "nameJa": "渡瀬 キウイ", "role": "影像剪辑／混音", "officialArtworkSource": "https://yorukura-anime.com/" },
+        { "id": "jelee-mei", "name": "高梨·金·阿努克·芽衣", "nameJa": "高梨・キム・アヌーク・めい", "role": "作曲", "officialArtworkSource": "https://yorukura-anime.com/" }
+      ]
+    },
+    {
+      "id": "rock-is-a-ladys-modesty",
+      "title": "Rock Is a Lady's Modesty",
+      "titleZh": "摇滚乃淑女之嗜好",
+      "unit": "核心四人组",
+      "format": "girls-band",
+      "officialCharacterPage": "https://rocklady.rocks/#Character",
+      "characters": [
+        { "id": "rocklady-lilisa", "name": "铃之宫莉莉纱", "nameJa": "鈴ノ宮 りりさ", "role": "吉他", "officialArtworkSource": "https://rocklady.rocks/dist/img/character/chara01/img1.webp?ver=1.0215" },
+        { "id": "rocklady-otoha", "name": "黑铁音羽", "nameJa": "黒鉄 音羽", "role": "鼓手", "officialArtworkSource": "https://rocklady.rocks/dist/img/character/chara02/img1.webp?ver=1.0215" },
+        { "id": "rocklady-tina", "name": "院濑见蒂娜", "nameJa": "院瀬見 ティナ", "role": "键盘", "officialArtworkSource": "https://rocklady.rocks/dist/img/character/chara03/img1.webp?ver=1.0215" },
+        { "id": "rocklady-tamaki", "name": "白矢环", "nameJa": "白矢 環", "role": "贝斯", "officialArtworkSource": "https://rocklady.rocks/dist/img/character/chara04/img1.webp?ver=1.0215" }
+      ]
+    }
+  ],
+  "includedExpansionUnits": [
+    {
+      "title": "BanG Dream! additional animated bands",
+      "officialCharacterPage": "https://anime.bang-dream.com/2nd/character/",
+      "units": [
+        {
+          "unit": "Afterglow",
+          "characters": ["美竹兰", "青叶摩卡", "上原绯玛丽", "宇田川巴", "羽泽鸫"]
+        },
+        {
+          "unit": "Pastel＊Palettes",
+          "characters": ["丸山彩", "冰川日菜", "白鹭千圣", "大和麻弥", "若宫伊芙"]
+        },
+        {
+          "unit": "Roselia",
+          "characters": ["凑友希那", "冰川纱夜", "今井莉莎", "宇田川亚子", "白金燐子"]
+        },
+        {
+          "unit": "Hello, Happy World!",
+          "characters": ["弦卷心", "濑田薰", "北泽育美", "松原花音", "奥泽美咲"]
+        },
+        {
+          "unit": "RAISE A SUILEN",
+          "characters": ["LAYER", "LOCK", "MASKING", "PAREO", "CHU²"]
+        },
+        {
+          "unit": "Morfonica",
+          "officialCharacterPage": "https://morfonica-anime.bang-dream.com/character/kurata-mashiro/",
+          "characters": ["仓田真白", "桐谷透子", "广町七深", "二叶筑紫", "八潮瑠唯"]
+        }
+      ]
+    }
+  ],
+  "implementationAssets": {
+    "assetDirectory": "website/public/assets/characters",
+    "downloadManifest": "website/scripts/download-official-assets.ps1",
+    "localAssetCount": 67
+  },
+  "futureExpansionCandidates": [
+    {
+      "title": "SHOW BY ROCK!! female bands",
+      "reason": "This is a valid music-anime extension, but its non-human setting creates a different tone from the initial corpus."
+    }
+  ]
+}

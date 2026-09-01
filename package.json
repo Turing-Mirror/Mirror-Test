@@ -1,0 +1,24 @@
+{
+  "name": "mirror-test",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static test index and embedded interactive tests for test.turingmirror.com.",
+  "type": "module",
+  "workspaces": [
+    "band-ti"
+  ],
+  "scripts": {
+    "build": "node ./scripts/build.mjs",
+    "build:band-ti": "npm run build --workspace band-ti",
+    "test:band-ti": "npm run test:sites --workspace band-ti",
+    "sync:anime": "node ./scripts/build.mjs --sync-only",
+    "sync:tests": "node ./scripts/build.mjs --sync-only",
+    "dev": "npm run build && npx wrangler@4 pages dev dist --ip 127.0.0.1 --port 4173",
+    "deploy:pages": "npm run build && npx wrangler@4 pages deploy dist --project-name mirror-test --branch main",
+    "cf:login": "npx wrangler@4 login",
+    "cf:project:create": "npx wrangler@4 pages project create mirror-test --production-branch main"
+  },
+  "devDependencies": {
+    "wrangler": "^4.127.1"
+  }
+}
