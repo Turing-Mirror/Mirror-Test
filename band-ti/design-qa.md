@@ -1,44 +1,54 @@
 # Design QA
 
-Date: 2026-08-31
+Date: 2026-09-01
 
 ## Scope
 
-- Desktop editorial homepage based on the selected first visual direction.
-- Mobile homepage and quiz layout.
-- 20-question selection flow, result screen, retry action, and character-library filter.
-- Local 67-character official-art asset set.
+- Desktop hero refresh for the girl-band character quiz.
+- Four rotating three-character sets, staggered card entry, and restrained artwork motion.
+- Manual next-set and pause controls, plus `prefers-reduced-motion` support.
 
-## Evidence
+## Comparison target
 
-- Desktop homepage was visually inspected in the local browser.
-- Desktop quiz and result views were visually inspected after completing all 20 questions.
-- Mobile homepage and first question were inspected at 390 by 844 pixels.
-- The filter was tested with Roselia and returned five character cards.
-- The result retry control returned the test to question one.
-- Browser console check returned no warnings or errors.
-- Production build and Sites worker tests both passed.
+- Source visual truth: `C:\Users\Ka251\AppData\Local\Temp\codex-clipboard-675f556a-5c46-46e8-821b-98c4924e6d2a.png`.
+- Source dimensions: 1489 by 1057 pixels.
+- Intended implementation viewport: desktop, 1920 by 1080 CSS pixels at device scale factor 1.
+- State: hero default state and one automatic character-set transition.
 
-## Findings and fixes
+## Rendered implementation evidence
 
-1. The desktop headline initially created an orphaned final character because its central line wrapped.
-   - Fix: split the heading into intentional lines and preserved the central line as a single phrase.
+- Local preview was started at `http://127.0.0.1:5173/`.
+- Implementation screenshot: unavailable. The in-app browser control process exited unexpectedly on two connection attempts before it could open the preview or capture a screenshot.
+- Because a browser-rendered capture is unavailable, a full-view comparison and focused hero-region comparison could not be made. No separate image views were treated as a visual comparison.
 
-2. The same non-wrapping headline overflowed at a phone width.
-   - Fix: introduced a mobile-specific display size that fits the full phrase without clipping.
+## Implemented interaction checks
 
-3. The local runtime should not depend on remote image delivery.
-   - Fix: all displayed artwork uses local files from public/assets/characters. External official URLs are limited to the optional result-page source link.
+- Production build passed.
+- Static-site worker tests passed: 4 of 4.
+- The hero source now advances through four deterministic groups of three local character assets every 5.2 seconds.
+- Each incoming card remounts with a staggered entrance animation. The character image has a restrained motion loop.
+- The visible controls allow the visitor to advance immediately or pause and resume automatic rotation.
+- `prefers-reduced-motion: reduce` disables automatic rotation and CSS movement while retaining manual group changes.
 
-4. The gallery can contain 67 images.
-   - Fix: non-hero gallery images use native lazy loading, while the hero loads only three local images.
+## Findings
 
-## Final checks
+- [P1] Browser-rendered visual comparison is unavailable.
+  - Location: desktop hero visual QA.
+  - Evidence: the local implementation could not be captured; the in-app browser control process exited before opening the local preview.
+  - Impact: typography, crop, spacing, colors, image framing, control positioning, and animation timing cannot be verified against the supplied visual target.
+  - Fix: restore the local browser connection, capture the hero at the stated viewport, then compare that capture with the source image and iterate on any P0–P2 differences.
 
-- No custom SVG or CSS illustration substitutes are used.
-- No generated image is used in the website.
-- No remote artwork is hotlinked by rendered image elements.
-- No user input is stored or sent to a server.
-- Keyboard-focus styling, semantic buttons, labels, and image alt text are present.
+## Required fidelity surfaces
 
-final result: passed
+- Fonts and typography: blocked pending rendered capture.
+- Spacing and layout rhythm: blocked pending rendered capture.
+- Colors and visual tokens: blocked pending rendered capture.
+- Image quality and asset fidelity: local character assets are retained; final crop and sharpness review is blocked pending rendered capture.
+- Copy and content: character names, labels, controls, and stage counter are implemented; final visual hierarchy review is blocked pending rendered capture.
+
+## Comparison history
+
+1. Initial attempt: local preview started successfully, but no implementation screenshot could be captured because browser control exited unexpectedly.
+2. Retry: browser control exited unexpectedly again before diagnostic documentation or page capture could be read.
+
+final result: blocked

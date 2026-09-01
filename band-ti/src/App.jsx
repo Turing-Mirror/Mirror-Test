@@ -1,13 +1,35 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { archetypeCopy, catalogSummary, characters } from "./data/characters.js";
 import { questions } from "./data/questions.js";
 
 const traitLabels = ["行动", "共鸣", "专注", "直觉", "坚定"];
-const heroCharacters = [
-  characters.find((character) => character.id === "gbc-nina"),
-  characters.find((character) => character.id === "poppa-kasumi"),
-  characters.find((character) => character.id === "rocklady-lilisa"),
+const heroCharacterIds = [
+  "gbc-nina",
+  "poppa-kasumi",
+  "rocklady-lilisa",
+  "mujica-uika",
+  "mygo-tomori",
+  "bocchi-ikuyo",
+  "jelee-kano",
+  "roselia-yukina",
+  "kon-yui",
+  "gbc-momoka",
+  "paspale-aya",
+  "morfonica-mashiro",
 ];
+const heroCharacterDeck = heroCharacterIds
+  .map((id) => characters.find((character) => character.id === id))
+  .filter(Boolean);
+const heroCharacterGroups = Array.from(
+  { length: Math.ceil(heroCharacterDeck.length / 3) },
+  (_, index) => heroCharacterDeck.slice(index * 3, index * 3 + 3),
+);
+const heroCardSlots = [
+  { className: "art-photo-one", label: "主舞台" },
+  { className: "art-photo-two", label: "开场角色" },
+  { className: "art-photo-three", label: "档案预览" },
+];
+const heroRotationDelay = 5200;
 
 function getResult(answers) {
   const traitScore = answers.reduce(
@@ -29,7 +51,28 @@ function getResult(answers) {
 }
 
 function scrollToSection(id) {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  document.getElementById(id)?.scrollIntoView({ behavior, block: "start" });
+}
+
+function useReducedMotion() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
+    if (typeof window === "undefined") {
+      return false;
+    }
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  });
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+    updatePreference();
+    mediaQuery.addEventListener("change", updatePreference);
+    return () => mediaQuery.removeEventListener("change", updatePreference);
+  }, []);
+
+  return prefersReducedMotion;
 }
 
 function Header({ onStart }) {
@@ -77,22 +120,81 @@ function StatBlock() {
 }
 
 function HeroArt() {
+  const [activeGroup, setActiveGroup] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+  const rotationStopped = prefersReducedMotion || isPaused || isHovering;
+  const currentCharacters = heroCharacterGroups[activeGroup];
+
+  function showNextGroup() {
+    setActiveGroup((current) => (current + 1) % heroCharacterGroups.length);
+  }
+
+  useEffect(() => {
+    if (rotationStopped) {
+      return undefined;
+    }
+
+    const rotationTimer = window.setInterval(showNextGroup, heroRotationDelay);
+    return () => window.clearInterval(rotationTimer);
+  }, [rotationStopped]);
+
+  useEffect(() => {
+    const upcomingCharacters = heroCharacterGroups[(activeGroup + 1) % heroCharacterGroups.length];
+    upcomingCharacters.forEach((character) => {
+      const upcomingImage = new Image();
+      upcomingImage.src = character.image;
+    });
+  }, [activeGroup]);
+
   return (
-    <div className="hero-art" aria-label="少女乐队角色插画">
+    <div
+      className="hero-art"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="少女乐队角色轮换展示"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
       <div className="art-note art-note-top">GIRL BAND ANIME</div>
       <div className="art-note art-note-bottom">YOUR SOUND / YOUR STORY</div>
-      <figure className="art-photo art-photo-one">
-        <img src={heroCharacters[0].image} alt={heroCharacters[0].name} />
-        <figcaption>强烈的声音</figcaption>
-      </figure>
-      <figure className="art-photo art-photo-two">
-        <img src={heroCharacters[1].image} alt={heroCharacters[1].name} />
-        <figcaption>最初的星光</figcaption>
-      </figure>
-      <figure className="art-photo art-photo-three">
-        <img src={heroCharacters[2].image} alt={heroCharacters[2].name} />
-        <figcaption>不愿妥协</figcaption>
-      </figure>
+      {currentCharacters.map((character, index) => {
+        const slot = heroCardSlots[index];
+        return (
+          <figure className={`art-photo ${slot.className} art-photo-enter`} key={`${activeGroup}-${character.id}`}>
+            <img decoding="async" src={character.image} alt={`${character.name}，${character.band}`} />
+            <figcaption>
+              <span>{character.name}</span>
+              <small>{slot.label}</small>
+            </figcaption>
+          </figure>
+        );
+      })}
+      <div className="art-controls" aria-label="角色轮换控制">
+        <p className="art-counter" aria-hidden="true">
+          <strong>{String(activeGroup + 1).padStart(2, "0")}</strong>
+          <span>/ {String(heroCharacterGroups.length).padStart(2, "0")}</span>
+        </p>
+        <div className="art-control-buttons">
+          <button className="art-control art-control-next" type="button" onClick={showNextGroup}>
+            换一组角色
+          </button>
+          {!prefersReducedMotion && (
+            <button
+              className="art-control art-control-pause"
+              type="button"
+              aria-pressed={isPaused}
+              onClick={() => setIsPaused((current) => !current)}
+            >
+              {isPaused ? "继续轮换" : "暂停轮换"}
+            </button>
+          )}
+        </div>
+      </div>
+      <p className="screen-reader-text" aria-live="polite" aria-atomic="true">
+        当前展示第 {activeGroup + 1} 组角色：{currentCharacters.map((character) => character.name).join("、")}。
+      </p>
     </div>
   );
 }
