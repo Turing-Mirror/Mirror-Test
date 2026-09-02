@@ -44,3 +44,11 @@ test("preserves the full QQ QR code in every display surface", async () => {
   assert.doesNotMatch(bandStyles, /\.result-community-card > img \{[^}]*object-fit: cover;/);
   assert.doesNotMatch(bandStyles, /\.result-poster-community img \{[^}]*object-fit: cover;/);
 });
+
+test("uses direct product copy for more tests", async () => {
+  const locale = await readFile(new URL("../src/locale.jsx", import.meta.url), "utf8");
+
+  assert.match(locale, /moreTestsCopy: "在测试镜浏览更多趣味测试。"/);
+  assert.doesNotMatch(locale, /犄角旮旯|角落裡的連結|Do not hunt for a small return link|小さな戻るリンク/);
+  assert.doesNotMatch(locale, /结果已经收好|結果已經收好|Your result is saved|結果は保存されました/);
+});

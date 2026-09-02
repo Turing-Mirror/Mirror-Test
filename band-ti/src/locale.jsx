@@ -96,54 +96,54 @@ const COPY = {
 
 Object.assign(COPY.sc, {
   moreTestsAction: "前往测试镜",
-  moreTestsTitle: "继续发现你的下一场测试",
-  moreTestsCopy: "完成这一场以后，不必回到犄角旮旯的链接。这里直接带你去测试镜继续挑下一项。",
+  moreTestsTitle: "更多测试",
+  moreTestsCopy: "在测试镜浏览更多趣味测试。",
   moreTestsGo: "进入测试",
   moreTestsDirectoryCopy: "打开测试镜总览，查看全部正在开放的趣味测试。",
   otherTestAnimeTitle: "2026 夏季番性格测验",
   otherTestAnimeCopy: "15 道问题，找出这一季最适合你的动画。",
   otherTestGalgameTitle: "GalGame 命定路线测验",
   otherTestGalgameCopy: "从路线口味和节奏偏好里，找到下一部该补的作品。",
-  resultMoreTestsCopy: "结果已经收好。回到测试镜，立刻开始另一项趣味测试。",
+  resultMoreTestsCopy: "在测试镜浏览更多趣味测试。",
 });
 
 Object.assign(COPY.tc, {
   moreTestsAction: "前往測試鏡",
-  moreTestsTitle: "繼續找到下一場測驗",
-  moreTestsCopy: "完成這一場以後，不必回到角落裡的連結；這裡直接帶你去測試鏡挑下一項。",
+  moreTestsTitle: "更多測驗",
+  moreTestsCopy: "在測試鏡瀏覽更多趣味測驗。",
   moreTestsGo: "進入測驗",
   moreTestsDirectoryCopy: "打開測試鏡總覽，查看所有正在開放的趣味測驗。",
   otherTestAnimeTitle: "2026 夏季番性格測驗",
   otherTestAnimeCopy: "15 道問題，找出這一季最適合你的動畫。",
   otherTestGalgameTitle: "GalGame 命定路線測驗",
   otherTestGalgameCopy: "從路線口味與節奏偏好裡，找到下一部該補的作品。",
-  resultMoreTestsCopy: "結果已經收好。回到測試鏡，立刻開始另一項趣味測驗。",
+  resultMoreTestsCopy: "在測試鏡瀏覽更多趣味測驗。",
 });
 
 Object.assign(COPY.en, {
   moreTestsAction: "Open Mirror-Test",
-  moreTestsTitle: "Find your next test",
-  moreTestsCopy: "Do not hunt for a small return link after this test. Pick your next playful match directly from Mirror-Test.",
+  moreTestsTitle: "More tests",
+  moreTestsCopy: "Browse more playful tests on Mirror-Test.",
   moreTestsGo: "Open test",
   moreTestsDirectoryCopy: "Open the Mirror-Test directory and browse every available test.",
   otherTestAnimeTitle: "Summer 2026 Anime Match",
   otherTestAnimeCopy: "15 questions to find the anime that best matches your season.",
   otherTestGalgameTitle: "GalGame Route Match",
   otherTestGalgameCopy: "Use route taste and pacing to find the next visual novel for you.",
-  resultMoreTestsCopy: "Your result is saved. Return to Mirror-Test and start another playful match now.",
+  resultMoreTestsCopy: "Browse more playful tests on Mirror-Test.",
 });
 
 Object.assign(COPY.ja, {
   moreTestsAction: "テスト鏡を開く",
-  moreTestsTitle: "次の診断を見つける",
-  moreTestsCopy: "小さな戻るリンクを探す必要はありません。ここからテスト鏡の次の診断へ進めます。",
+  moreTestsTitle: "ほかのテスト",
+  moreTestsCopy: "テスト鏡でほかの楽しい診断を見る。",
   moreTestsGo: "診断を開く",
   moreTestsDirectoryCopy: "テスト鏡の一覧を開き、公開中のすべての診断を見る。",
   otherTestAnimeTitle: "2026 夏アニメ性格診断",
   otherTestAnimeCopy: "15問で、この季節にいちばん合うアニメを探します。",
   otherTestGalgameTitle: "GalGame 命定ルート診断",
   otherTestGalgameCopy: "ルートの好みとテンポから、次に遊ぶ作品を探します。",
-  resultMoreTestsCopy: "結果は保存されました。テスト鏡に戻り、次の楽しい診断を始めましょう。",
+  resultMoreTestsCopy: "テスト鏡でほかの楽しい診断を見る。",
 });
 
 COPY.hx = { ...COPY.sc, moreTests: "更多试题", start: "开始开测", footerMoreTests: "再看更多试题" };
