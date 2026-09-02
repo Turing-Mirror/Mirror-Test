@@ -496,6 +496,13 @@ var CATALOG_EXTRAS_COPY = {
   yue: { communityKicker: "COMMUNITY", communityTitle: "圖靈鏡 QQ 社群", communityText: "同其他測驗玩家交流結果，一齊等新題庫。", communityNumber: "群號 1077458748", communityCopy: "複製群號", communityCopied: "已複製群號", communityQrAlt: "圖靈鏡 QQ 社群二維碼", promoKicker: "PROMOTION", promoTitle: "雨雲", promoText: "首月五折 · 性價比雲伺服器 / 遊戲雲 / 面板服", promoAction: "去雨雲" },
   ja: { communityKicker: "COMMUNITY", communityTitle: "Turing Mirror QQ コミュニティ", communityText: "ほかの診断ユーザーと結果を共有し、新しい問題集の更新も追えます。", communityNumber: "グループ 1077458748", communityCopy: "番号をコピー", communityCopied: "番号をコピーしました", communityQrAlt: "Turing Mirror QQ コミュニティの QR コード", promoKicker: "PROMOTION", promoTitle: "Rainyun", promoText: "初月半額 · 高コスパのクラウドサーバー / ゲームクラウド / パネルホスティング", promoAction: "Rainyun へ" }
 };
+Object.assign(CATALOG_EXTRAS_COPY.tc, { socialKicker: "SOCIAL", socialTitle: "關注圖靈鏡", socialText: "取得新測驗、產品與專案動態。" });
+Object.assign(CATALOG_EXTRAS_COPY.sc, { socialKicker: "SOCIAL", socialTitle: "关注图灵镜", socialText: "获取新测试、产品与项目动态。" });
+Object.assign(CATALOG_EXTRAS_COPY.hx, { socialKicker: "SOCIAL", socialTitle: "關注圖靈鏡", socialText: "新測驗、產品與專案動態都在這裡。" });
+Object.assign(CATALOG_EXTRAS_COPY.wy, { socialKicker: "SOCIAL", socialTitle: "關注圖靈鏡", socialText: "新試、產品與專案之動態皆在此。" });
+Object.assign(CATALOG_EXTRAS_COPY.en, { socialKicker: "SOCIAL", socialTitle: "Follow Turing Mirror", socialText: "Find new tests, products, and project updates." });
+Object.assign(CATALOG_EXTRAS_COPY.yue, { socialKicker: "SOCIAL", socialTitle: "關注圖靈鏡", socialText: "新測驗、產品同專案動態都喺呢度。" });
+Object.assign(CATALOG_EXTRAS_COPY.ja, { socialKicker: "SOCIAL", socialTitle: "Turing Mirror をフォロー", socialText: "新しい診断、プロダクト、プロジェクトの更新を確認できます。" });
 function currentCopy() {
   return SITE_COPY[currentLocale] || SITE_COPY.tc;
 }
@@ -867,6 +874,12 @@ function renderCatalogExtras() {
   var promotionTitle;
   var promotionText;
   var promotionAction;
+  var social;
+  var socialContent;
+  var socialKicker;
+  var socialTitle;
+  var socialText;
+  var socialList;
 
   if (!container) { return; }
 
@@ -932,8 +945,50 @@ function renderCatalogExtras() {
   promotionContent.appendChild(promotionText);
   promotionContent.appendChild(promotionAction);
   promotion.appendChild(promotionContent);
+
+  social = document.createElement("section");
+  social.className = "catalog-extra catalog-social";
+  socialContent = document.createElement("div");
+  socialContent.className = "catalog-extra-content";
+  socialKicker = document.createElement("p");
+  socialKicker.className = "catalog-extra-kicker";
+  socialKicker.textContent = copy.socialKicker;
+  socialTitle = document.createElement("h3");
+  socialTitle.textContent = copy.socialTitle;
+  socialText = document.createElement("p");
+  socialText.className = "catalog-extra-text";
+  socialText.textContent = copy.socialText;
+  socialList = document.createElement("div");
+  socialList.className = "catalog-social-list";
+  [
+    { platform: "哔哩哔哩", account: "@图灵镜", detail: "UID 3546871148579062", href: "https://space.bilibili.com/3546871148579062" },
+    { platform: "抖音", account: "@图灵镜", detail: "TuringMirror", href: "https://v.douyin.com/6NxXcrKK9cc" },
+    { platform: "小红书", account: "@图灵镜", detail: "TuringMirror", href: "https://www.xiaohongshu.com/user/profile/65f56bf1000000000b00e094" }
+  ].forEach(function (item) {
+    var link = document.createElement("a");
+    var platform = document.createElement("span");
+    var account = document.createElement("strong");
+    var detail = document.createElement("small");
+    link.className = "catalog-social-link";
+    link.href = item.href;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    platform.textContent = item.platform;
+    account.textContent = item.account;
+    detail.textContent = item.detail + " ↗";
+    link.appendChild(platform);
+    link.appendChild(account);
+    link.appendChild(detail);
+    socialList.appendChild(link);
+  });
+  socialContent.appendChild(socialKicker);
+  socialContent.appendChild(socialTitle);
+  socialContent.appendChild(socialText);
+  social.appendChild(socialContent);
+  social.appendChild(socialList);
   container.appendChild(community);
   container.appendChild(promotion);
+  container.appendChild(social);
 }
 
 function getRandomLiveTest(tests) {

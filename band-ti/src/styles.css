@@ -2823,3 +2823,132 @@ img {
     animation: none;
   }
 }
+
+.social-links {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(28px, 5vw, 88px);
+  align-items: end;
+  padding: clamp(48px, 7vw, 96px) clamp(24px, 5vw, 80px);
+  color: #fffdf8;
+  background: #171411;
+}
+
+.social-links-copy {
+  max-width: 450px;
+}
+
+.social-links-copy h2 {
+  margin: 14px 0 0;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: clamp(30px, 3.4vw, 54px);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 1.08;
+}
+
+.social-links-copy > p:last-child {
+  margin: 18px 0 0;
+  color: #b8afa4;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.social-link-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 140px;
+  border: 1px solid #625a50;
+  padding: 16px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  border-color: #d9422e;
+  background: #2b2723;
+  outline: none;
+}
+
+.social-link span {
+  color: #d9422e;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.social-link strong {
+  margin-top: 22px;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: clamp(20px, 2vw, 28px);
+  letter-spacing: -0.04em;
+}
+
+.social-link small {
+  margin-top: 10px;
+  color: #b8afa4;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.quiz-social-links {
+  width: min(100% - 48px, 970px);
+  margin: 0 auto;
+  border-top: 1px solid #453e37;
+  padding: 32px 0 0;
+  color: #fffdf8;
+  background: transparent;
+}
+
+.quiz-social-links .social-links-copy h2 {
+  font-size: clamp(24px, 2.8vw, 36px);
+}
+
+.quiz-social-links .social-links-copy > p:last-child {
+  color: #978d83;
+}
+
+.quiz-social-links .social-link {
+  min-height: 116px;
+  border-color: #453e37;
+}
+
+.quiz-social-links .social-link:hover,
+.quiz-social-links .social-link:focus-visible {
+  border-color: #d9422e;
+  background: #2b2723;
+}
+
+.result-social-links {
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .social-link-list {
+    grid-template-columns: 1fr;
+  }
+
+  .social-link {
+    min-height: 108px;
+  }
+
+  .quiz-social-links {
+    width: min(100% - 32px, 970px);
+  }
+}

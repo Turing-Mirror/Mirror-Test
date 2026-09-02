@@ -3,6 +3,7 @@ import { archetypeCopy, catalogSummary, characters } from "./data/characters.js"
 import { getWikiLink } from "./data/wiki.js";
 import { BandLocaleProvider, LanguageSelect, useBandLocale } from "./locale.jsx";
 import { QUESTION_COUNT, createQuestionSet, questionBank } from "./data/questions.js";
+import { createQuizResult } from "./data/results.js";
 import { createHeroCharacterGroups, HERO_ROTATION_DELAY } from "./data/hero-roster.js";
 
 const traitDetails = [
@@ -19,36 +20,21 @@ const otherTests = [
   { id: "anime", href: "/anime-summer-2026/", titleKey: "otherTestAnimeTitle", copyKey: "otherTestAnimeCopy", index: "02" },
   { id: "galgame", href: "/galgame-test/", titleKey: "otherTestGalgameTitle", copyKey: "otherTestGalgameCopy", index: "03" },
 ];
+const socialLinks = [
+  { platform: "哔哩哔哩", handle: "@图灵镜", detail: "UID 3546871148579062", href: "https://space.bilibili.com/3546871148579062" },
+  { platform: "抖音", handle: "@图灵镜", detail: "抖音号 TuringMirror", href: "https://v.douyin.com/6NxXcrKK9cc" },
+  { platform: "小红书", handle: "@图灵镜", detail: "小红书号 TuringMirror", href: "https://www.xiaohongshu.com/user/profile/65f56bf1000000000b00e094" },
+];
 
-function getResult(answers) {
-  const traitScore = answers.reduce(
-    (total, values) => total.map((value, index) => value + values[index]),
-    [0, 0, 0, 0, 0],
-  );
-  const seed = answers.flat().reduce((total, value, index) => total + value * (index + 3), 0);
-  const maximumScore = Math.max(
-    traitScore.reduce((total, score) => total + score * 5, 0),
-    1,
-  );
-  const ranked = characters.map((character) => ({
-    ...character,
-    score: character.profile.reduce((total, value, index) => total + value * traitScore[index], 0),
-  })).sort((a, b) => {
-    const aScore = a.score;
-    const bScore = b.score;
-    if (bScore !== aScore) {
-      return bScore - aScore;
-    }
-    const aTie = (a.id.length * 17 + seed) % 19;
-    const bTie = (b.id.length * 17 + seed) % 19;
-    return bTie - aTie;
-  });
-  const traitRanking = traitScore
-    .map((score, index) => ({ ...traitDetails[index], score, index }))
-    .sort((a, b) => b.score - a.score || a.index - b.index);
-  const matchPercent = Math.max(1, Math.min(100, Math.round((ranked[0].score / maximumScore) * 100)));
+function createSessionSeed() {
+  return Math.floor(Math.random() * 0x100000000);
+}
 
-  return { traitScore, ranked, maximumScore, matchPercent, traitRanking, questionCount: answers.length };
+function createQuizSession() {
+  return {
+    questionSeed: createSessionSeed(),
+    resultSeed: createSessionSeed(),
+  };
 }
 
 function scrollToSection(id) {
@@ -234,7 +220,7 @@ function HeroArt() {
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      <div className="art-note art-note-top">GIRL BAND ANIME / 67 CHARACTERS</div>
+      <div className="art-note art-note-top">GIRL BAND ANIME / {catalogSummary.characters} CHARACTERS</div>
       <div className="art-note art-note-bottom">YOUR SOUND / YOUR STORY</div>
       <div className={`hero-stage hero-stage-count-${currentCharacters.length}`} key={[round, activeGroup].join("-")}>
         {currentCharacters.map((character, index) => <HeroStageCard character={character} index={index} key={character.id} />)}
@@ -255,6 +241,29 @@ function HeroArt() {
         {t("rosterLive", { current: activeGroup + 1, names: currentCharacters.map((character) => character.name).join("、") })}
       </p>
     </div>
+  );
+}
+
+function SocialLinks({ className = "" }) {
+  const { t } = useBandLocale();
+
+  return (
+    <section className={`social-links ${className}`.trim()} aria-labelledby="social-links-title">
+      <div className="social-links-copy">
+        <p className="eyebrow">TURING MIRROR / SOCIAL</p>
+        <h2 id="social-links-title">{t("socialTitle")}</h2>
+        <p>{t("socialCopy")}</p>
+      </div>
+      <div className="social-link-list">
+        {socialLinks.map((social) => (
+          <a className="social-link" href={social.href} key={social.platform} target="_blank" rel="noreferrer">
+            <span>{social.platform}</span>
+            <strong>{social.handle}</strong>
+            <small>{social.detail} ↗</small>
+          </a>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -298,7 +307,7 @@ function Gallery() {
     <section className="gallery-section" id="gallery" aria-labelledby="gallery-title">
       <div className="section-heading">
         <p className="eyebrow">CHARACTER LIBRARY</p>
-        <h2 id="gallery-title">{t("galleryTitle")}</h2>
+        <h2 id="gallery-title">{t("galleryTitle", { characters: catalogSummary.characters })}</h2>
         <p>{t("galleryCopy", { series: catalogSummary.series, bands: catalogSummary.bands })}</p>
       </div>
       <label className="band-filter">
@@ -347,6 +356,7 @@ function Home({ onStart }) {
         </div>
       </section>
       <MoreTestsShowcase />
+      <SocialLinks />
       <section className="about-section" id="about" aria-labelledby="about-title">
         <div className="about-number">01</div>
         <div><p className="eyebrow">HOW IT WORKS</p><h2 id="about-title">不是贴标签，而是一次为当下心情留存的乐队选曲。</h2></div>
@@ -375,7 +385,7 @@ function Quiz({ questionIndex, questions, onAnswer, onBack, onExit }) {
         <div className="answer-list">{question.options.map((option, index) => <button className="answer-button" key={option.label} type="button" onClick={() => onAnswer(option.values)}><span>{String.fromCharCode(65 + index)}</span><strong>{option.label}</strong></button>)}</div>
         <button className="quiz-back-button" type="button" disabled={questionIndex === 0} onClick={onBack}>{t("quizBack")}</button>
       </section>
-      <p className="quiz-note">{t("quizNote", { total: questionBank.length })}</p>
+      <div className="quiz-outro"><SocialLinks className="quiz-social-links" /><p className="quiz-note">{t("quizNote", { total: questionBank.length })}</p></div>
     </main>
   );
 }
@@ -420,7 +430,7 @@ function ResultPoster({ character, result, archetype, primaryTrait, secondaryTra
         <div className="result-poster-copy"><p>你的角色结果</p><h2>{character.name}</h2><span>{character.series}</span><strong>{character.band}</strong><div className="result-poster-score"><b>{result.matchPercent}</b><span>% {t("score")}</span></div><div className="result-poster-traits"><span>{archetype.title}</span><span>{primaryTrait.label} · {secondaryTrait.label}</span></div></div>
       </div>
       <div className="result-poster-footer">
-        <div><p>STAGE DOSSIER</p><strong>{character.role}</strong><span>{result.questionCount} 个选择 · 67 名角色库</span></div>
+        <div><p>STAGE DOSSIER</p><strong>{character.role}</strong><span>{result.questionCount} 个选择 · {catalogSummary.characters} 名角色库</span></div>
         <div className="result-poster-codes"><div className="result-poster-qr"><img src={qrCodeDataUrl} alt="" /><span>{t("testQr")}</span></div><div className="result-poster-qr result-poster-community"><img src={communityQrUrl} alt="" /><span>QQ {QQ_GROUP_ID}</span></div></div>
       </div>
     </article>
@@ -571,6 +581,7 @@ function Result({ result, onRestart, onHome }) {
         <div className="result-share-copy"><p className="eyebrow">RESULT POSTER</p><h2 id="share-title">{t("posterTitle")}</h2><p>{t("posterCopy")}</p><div className="result-share-actions"><button className="primary-button" type="button" disabled={!qrCodeDataUrl || exportMode !== "idle"} onClick={savePoster}>{exportMode === "saving" ? t("posterSaving") : t("posterDownload")}</button><button className="text-button" type="button" disabled={!qrCodeDataUrl || exportMode !== "idle"} onClick={previewPoster}>{exportMode === "previewing" ? t("posterPreviewing") : t("posterPreview")}</button></div>{exportError && <p className="result-export-error" role="alert">{exportError}</p>}</div>
         <div className="result-share-asides"><aside className="result-qr-card"><div className="result-qr-image">{qrCodeDataUrl ? <img src={qrCodeDataUrl} alt={t("testQr")} /> : <span>二维码生成中</span>}</div><div><p>{t("testQr")}</p><span>{shareUrl.replace(/^https?:\/\//, "")}</span></div></aside><aside className="result-community-card"><img src={communityQrUrl} alt={t("communityTitle")} /><div><p>{t("communityTitle")}</p><strong>{QQ_GROUP_ID}</strong><span>{t("communityHint")}</span><button type="button" onClick={copyCommunityGroup}>{communityCopied ? t("communityCopied") : t("communityCopy")}</button></div></aside></div>
       </section>
+      <SocialLinks className="result-social-links" />
       <div className="result-poster-capture" aria-hidden="true"><ResultPoster character={character} result={result} archetype={archetype} primaryTrait={primaryTrait} secondaryTrait={secondaryTrait} qrCodeDataUrl={qrCodeDataUrl} posterRef={posterRef} /></div>
       {posterPreviewUrl && <div className="poster-preview" role="dialog" aria-modal="true" aria-labelledby="poster-preview-title"><button className="poster-preview-backdrop" type="button" aria-label={t("close")} onClick={() => setPosterPreviewUrl("")} /><div className="poster-preview-panel"><div className="poster-preview-head"><div><p id="poster-preview-title">{t("previewTitle")}</p><span>{t("previewHint")}</span></div><button className="poster-preview-close" type="button" onClick={() => setPosterPreviewUrl("")}>{t("close")}</button></div><img src={posterPreviewUrl} alt={`${character.name} 的少女乐队角色测试结果图`} /></div></div>}
       <footer className="site-footer result-footer"><p>本测试仅供娱乐。角色与图片的权利归各官方权利方所有。</p><a className="footer-more-tests" href="/"><span>MORE TESTS</span><strong>{t("footerMoreTests")}</strong><small>{t("moreTestsAction")}</small></a></footer>
@@ -582,14 +593,25 @@ function BandTiApp() {
   const [view, setView] = useState("home");
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState([]);
-  const [quizQuestions, setQuizQuestions] = useState(() => createQuestionSet());
-  const result = useMemo(
-    () => (answers.length === quizQuestions.length ? getResult(answers) : null),
-    [answers, quizQuestions],
-  );
+  const [quizSession, setQuizSession] = useState(createQuizSession);
+  const [quizQuestions, setQuizQuestions] = useState(() => createQuestionSet(quizSession.questionSeed));
+  const result = useMemo(() => {
+    if (answers.length !== quizQuestions.length) {
+      return null;
+    }
+
+    const quizResult = createQuizResult(answers, quizSession.resultSeed);
+    const traitRanking = quizResult.traitScore
+      .map((score, index) => ({ ...traitDetails[index], score, index }))
+      .sort((first, second) => second.score - first.score || first.index - second.index);
+
+    return { ...quizResult, traitRanking };
+  }, [answers, quizQuestions, quizSession.resultSeed]);
 
   function startQuiz() {
-    setQuizQuestions(createQuestionSet(Date.now() + Math.floor(Math.random() * 1000000)));
+    const nextSession = createQuizSession();
+    setQuizSession(nextSession);
+    setQuizQuestions(createQuestionSet(nextSession.questionSeed));
     setAnswers([]);
     setQuestionIndex(0);
     setView("quiz");

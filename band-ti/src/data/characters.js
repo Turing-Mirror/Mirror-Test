@@ -120,6 +120,13 @@ export const characters = [
     ["morfonica-tsukushi", "二叶筑紫", "鼓手", "morfonica-tsukushi.png", "resolve"],
     ["morfonica-rui", "八潮瑠唯", "小提琴", "morfonica-rui.png", "craft"],
   ]),
+  ...makeBand("BanG Dream! YUME∞MITA", "梦限大MewType", "https://anime.bang-dream.com/yumemita/character/", [
+    ["yumemita-arale", "仲町阿拉蕾", "主唱", "yumemita-arale.png", "spark"],
+    ["yumemita-nonoka", "宫永野乃花", "吉他", "yumemita-nonoka.png", "care"],
+    ["yumemita-ritsu", "峰月律", "吉他", "yumemita-ritsu.png", "resolve"],
+    ["yumemita-miyako", "藤都子", "键盘", "yumemita-miyako.png", "craft"],
+    ["yumemita-yuno", "千石由乃", "DJ / Mp.", "yumemita-yuno.png", "free"],
+  ]),
 ];
 
 export const archetypeCopy = {

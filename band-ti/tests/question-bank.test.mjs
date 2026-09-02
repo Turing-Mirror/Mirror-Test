@@ -2,10 +2,19 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { QUESTION_COUNT, createQuestionSet, questionBank } from "../src/data/questions.js";
 
+function optionSignature(option) {
+  return `${option.label}:${option.values.join(",")}`;
+}
+
 test("keeps a broad categorized question bank", () => {
-  assert.equal(questionBank.length, 100);
+  assert.equal(questionBank.length, 150);
   assert.equal(new Set(questionBank.map((item) => item.category)).size, 10);
   assert.equal(new Set(questionBank.map((item) => item.id)).size, questionBank.length);
+  const questionsByCategory = questionBank.reduce((counts, item) => {
+    counts.set(item.category, (counts.get(item.category) || 0) + 1);
+    return counts;
+  }, new Map());
+  assert.ok([...questionsByCategory.values()].every((count) => count === 15));
 
   for (const item of questionBank) {
     assert.equal(item.options.length, 4, item.id);
@@ -22,7 +31,7 @@ test("creates deterministic balanced 20-question sessions", () => {
   const ids = firstSet.map((item) => item.id);
 
   assert.equal(firstSet.length, QUESTION_COUNT);
-  assert.deepEqual(ids, repeatSet.map((item) => item.id));
+  assert.deepEqual(firstSet, repeatSet);
   assert.equal(new Set(ids).size, QUESTION_COUNT);
 
   const categoryCount = new Map();
@@ -31,4 +40,25 @@ test("creates deterministic balanced 20-question sessions", () => {
   }
   assert.equal(categoryCount.size, 10);
   assert.ok([...categoryCount.values()].every((count) => count === 2));
+});
+
+test("randomizes option presentation without changing answer data", () => {
+  const session = createQuestionSet(20260901);
+  const sourceById = new Map(questionBank.map((item) => [item.id, item]));
+
+  for (const item of session) {
+    const source = sourceById.get(item.id);
+    assert.deepEqual(
+      item.options.map(optionSignature).sort(),
+      source.options.map(optionSignature).sort(),
+      item.id,
+    );
+  }
+
+  assert.ok(
+    session.some((item) =>
+      item.options.map((option) => option.label).join("\u0000") !==
+      sourceById.get(item.id).options.map((option) => option.label).join("\u0000"),
+    ),
+  );
 });

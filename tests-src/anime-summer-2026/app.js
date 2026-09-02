@@ -1556,3 +1556,34 @@
     init();
   }
 })();
+
+(function () {
+  function addSocialLinks() {
+    var footers = document.querySelectorAll(".paper-footer");
+    var accounts = [
+      { label: "哔哩哔哩 · @图灵镜", href: "https://space.bilibili.com/3546871148579062" },
+      { label: "抖音 · TuringMirror", href: "https://v.douyin.com/6NxXcrKK9cc" },
+      { label: "小红书 · TuringMirror", href: "https://www.xiaohongshu.com/user/profile/65f56bf1000000000b00e094" }
+    ];
+
+    footers.forEach(function (footer) {
+      var links;
+      if (footer.querySelector(".turing-social-links")) { return; }
+      links = document.createElement("nav");
+      links.className = "turing-social-links";
+      links.setAttribute("aria-label", "图灵镜社媒");
+      accounts.forEach(function (account) {
+        var link = document.createElement("a");
+        link.className = "turing-social-link";
+        link.href = account.href;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        link.textContent = account.label;
+        links.appendChild(link);
+      });
+      footer.appendChild(links);
+    });
+  }
+
+  addSocialLinks();
+}());
