@@ -30,3 +30,17 @@ test("keeps more tests as a primary home and result action", async () => {
   assert.match(source, /createHeroRoster/);
   assert.doesNotMatch(source, /stage-pagination/);
 });
+
+test("preserves the full QQ QR code in every display surface", async () => {
+  const [catalogStyles, bandStyles] = await Promise.all([
+    readFile(new URL("../../src/style.css", import.meta.url), "utf8"),
+    readFile(new URL("../src/styles.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(catalogStyles, /\.catalog-community-qr \{[^}]*aspect-ratio: 717 \/ 900;[^}]*object-fit: contain;/);
+  assert.match(bandStyles, /\.result-community-card > img \{[^}]*aspect-ratio: 717 \/ 900;[^}]*object-fit: contain;/);
+  assert.match(bandStyles, /\.result-poster-community img \{[^}]*aspect-ratio: 717 \/ 900;[^}]*object-fit: contain;/);
+  assert.doesNotMatch(catalogStyles, /\.catalog-community-qr \{[^}]*object-fit: cover;/);
+  assert.doesNotMatch(bandStyles, /\.result-community-card > img \{[^}]*object-fit: cover;/);
+  assert.doesNotMatch(bandStyles, /\.result-poster-community img \{[^}]*object-fit: cover;/);
+});

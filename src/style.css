@@ -1011,10 +1011,12 @@ a {
   display: block;
   width: 156px;
   max-width: 100%;
-  aspect-ratio: 1;
+  height: auto;
+  aspect-ratio: 717 / 900;
   border: 1.5px solid var(--border-dark);
   background: #fff;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 @media (max-width: 760px) {

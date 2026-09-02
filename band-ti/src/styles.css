@@ -2083,8 +2083,10 @@ img {
 
 .result-community-card > img {
   width: 104px;
-  height: 104px;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 717 / 900;
+  object-fit: contain;
+  object-position: center;
   background: #fff;
 }
 
@@ -2138,6 +2140,10 @@ img {
 }
 
 .result-poster-community img {
+  height: auto;
+  aspect-ratio: 717 / 900;
+  object-fit: contain;
+  object-position: center;
   background: #fff;
 }
 
@@ -2209,7 +2215,7 @@ img {
 
   .result-community-card > img {
     width: 84px;
-    height: 84px;
+    height: auto;
   }
 
   .result-poster-codes {
@@ -2219,6 +2225,10 @@ img {
   .result-poster-qr img {
     width: 88px;
     height: 88px;
+  }
+
+  .result-poster-community img {
+    height: auto;
   }
 }
 

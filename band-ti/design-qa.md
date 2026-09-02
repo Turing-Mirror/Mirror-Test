@@ -17,6 +17,7 @@ Date: 2026-09-02
 - Added a large More Tests action beside Start Quiz, a dedicated discovery section linking to the two other live tests and the Mirror-Test directory, a full-width result CTA, and a prominent footer CTA.
 - Added localized copy for Simplified Chinese, Traditional Chinese, English, and Japanese. The existing derived locales inherit the new copy.
 - Added automated coverage to ensure every one of the 67 characters appears exactly once across the rotation groups and that the home/result/footer More Tests surfaces remain present.
+- The 717 by 900 QQ community QR image now keeps its complete native aspect ratio in the Mirror-Test catalog, Band-TI result card, and generated result poster; no QR surface uses cover cropping.
 
 ## Automated evidence
 
