@@ -8,12 +8,12 @@ Date: 2026-09-02
 - Source visual truth: user-provided editorial reference C:\Users\Ka251\AppData\Local\Temp\codex-clipboard-675f556a-5c46-46e8-821b-98c4924e6d2a.png.
 - Regression evidence: user-provided current-state screenshots C:\Users\Ka251\AppData\Local\Temp\codex-clipboard-616bee0d-0bcc-4e3e-b658-b028c092e7a4.png and C:\Users\Ka251\AppData\Local\Temp\codex-clipboard-8a9bee35-cdb3-4881-a4b3-5b4c47fbb7c8.png.
 - Intended changes: left-side editorial copy with two equal primary actions, a layered 3-to-4 character stage instead of a dense grid, and visible More Tests actions on the home page, result page, and footer.
-- Character coverage: 67 local characters partitioned into 17 groups of at most four. Every group can be selected directly.
+- Character coverage: 67 local characters are shuffled into 17 groups of at most four for each complete rotation. The next full rotation reshuffles the roster.
 
 ## Implemented changes
 
 - Replaced the fixed eight-card roster grid with a layered character stage. Portrait source art uses contain fitting; landscape source art uses cover fitting after its natural dimensions load, preventing the large blank vertical cards visible in the regression screenshot.
-- Reduced the rotation group size to four characters and added 17 direct group controls, previous/next controls, pause/resume, automatic rotation, and reduced-motion handling.
+- Reduced the rotation group size to four characters and added previous/next controls, pause/resume, automatic rotation, and reduced-motion handling. The roster is shuffled when the page opens and again after each complete rotation; redundant 17-group number controls are removed.
 - Added a large More Tests action beside Start Quiz, a dedicated discovery section linking to the two other live tests and the Mirror-Test directory, a full-width result CTA, and a prominent footer CTA.
 - Added localized copy for Simplified Chinese, Traditional Chinese, English, and Japanese. The existing derived locales inherit the new copy.
 - Added automated coverage to ensure every one of the 67 characters appears exactly once across the rotation groups and that the home/result/footer More Tests surfaces remain present.

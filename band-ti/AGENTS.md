@@ -16,3 +16,4 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Maintain a 100-question, 10-category bank and draw exactly two questions from each category for every 20-question session. Keep the full 67-character roster rotating on the home page, link each character to its supplied Moegirl Wiki entry, and show the Turing Mirror QQ group (1077458748) plus its QR code in result sharing.
 - The result flow includes expanded matching context, a QR code back to the test, and a locally generated share poster using the existing official character art. Do not use AI-generated replacement artwork.
 - 2026-09-02：首页以用户提供的舞台式示意图为准。左侧为大标题与两项同级主操作；右侧必须使用三至四张重叠的本地角色图形成舞台，而不是密集网格。更多测试必须在首屏、结果页与页尾作为明确的大入口，直达测试镜首页；不能只放在顶部导航或小型返回链接中。
+- 2026-09-02：角色舞台不展示所有分组的数字分页。页面进入时和完成一轮时都随机洗牌全部角色，按四人一组轮换；保留上一组、下一组、暂停和简洁的当前轮次计数。

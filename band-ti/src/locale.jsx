@@ -28,7 +28,7 @@ const COPY = {
     rosterNext: "下一组角色",
     rosterPause: "暂停轮换",
     rosterResume: "继续轮换",
-    rosterCount: "第 {current}/{total} 组 · {count} 名角色",
+    rosterCount: "本轮第 {current}/{total} 组 · {count} 名角色",
     rosterLive: "当前展示第 {current} 组角色：{names}。",
     galleryTitle: "67 名角色，都会在首页轮换展示。",
     galleryCopy: "覆盖 {series} 部少女乐队动画与 {bands} 组乐队或音乐组合。点开角色卡即可前往对应的萌娘百科页面。",
@@ -63,7 +63,7 @@ const COPY = {
     language: "語言", about: "關於測驗", library: "角色庫", moreTests: "更多測驗", start: "開始測驗",
     heroTitleA: "測一測你是", heroTitleB: "哪部少女樂隊番的", heroTitleC: "哪個角色",
     heroLead: "每次會從 {total} 道場景題中均衡抽取 {count} 個選擇，找到與你最同頻的樂隊角色。答案沒有標準，只記錄你此刻最想發出的聲音。",
-    rosterLabel: "全角色輪換展示", rosterPrevious: "上一組", rosterNext: "下一組角色", rosterPause: "暫停輪換", rosterResume: "繼續輪換", rosterCount: "第 {current}/{total} 組 · {count} 名角色", rosterLive: "目前展示第 {current} 組角色：{names}。",
+    rosterLabel: "全角色輪換展示", rosterPrevious: "上一組", rosterNext: "下一組角色", rosterPause: "暫停輪換", rosterResume: "繼續輪換", rosterCount: "本輪第 {current}/{total} 組 · {count} 名角色", rosterLive: "目前展示第 {current} 組角色：{names}。",
     galleryTitle: "67 名角色，都會在首頁輪換展示。", galleryCopy: "涵蓋 {series} 部少女樂隊動畫與 {bands} 組樂隊或音樂組合。點開角色卡即可前往對應的萌娘百科頁面。", bandFilter: "篩選樂隊", wiki: "查看角色 Wiki",
     quizProgress: "第 {current} 題 / 共 {total} 題", quizBack: "返回上一題", quizNote: "憑第一反應選擇即可。本輪題目從 {total} 道題庫中均衡抽取，你的選擇只保存在目前瀏覽器會話中。",
     resultTitle: "你的角色結果", retry: "再測一次", official: "查看作品官方角色頁", resultWiki: "查看角色 Wiki", score: "共鳴指數",
@@ -74,7 +74,7 @@ const COPY = {
     language: "Language", about: "About", library: "Character Library", moreTests: "More Tests", start: "Start Quiz",
     heroTitleA: "Which girl-band", heroTitleB: "anime character", heroTitleC: "are you?",
     heroLead: "Each run draws {count} balanced choices from a pool of {total} scenes to find your closest girl-band character match.",
-    rosterLabel: "Full roster rotation", rosterPrevious: "Previous set", rosterNext: "Next set", rosterPause: "Pause rotation", rosterResume: "Resume rotation", rosterCount: "Set {current}/{total} · {count} characters", rosterLive: "Showing set {current}: {names}.",
+    rosterLabel: "Full roster rotation", rosterPrevious: "Previous set", rosterNext: "Next set", rosterPause: "Pause rotation", rosterResume: "Resume rotation", rosterCount: "Round {current}/{total} · {count} characters", rosterLive: "Showing set {current}: {names}.",
     galleryTitle: "All 67 characters rotate on the home page.", galleryCopy: "Across {series} girl-band anime series and {bands} bands or music groups. Open any card for its Moegirl Wiki page.", bandFilter: "Filter by band", wiki: "Open character Wiki",
     quizProgress: "Question {current} / {total}", quizBack: "Previous question", quizNote: "Choose your first instinct. This round is balanced from a {total}-question pool and stays only in this browser session.",
     resultTitle: "Your character result", retry: "Try again", official: "Open official character page", resultWiki: "Open character Wiki", score: "Resonance score",
@@ -85,7 +85,7 @@ const COPY = {
     language: "言語", about: "テストについて", library: "キャラクター", moreTests: "ほかのテスト", start: "診断を始める",
     heroTitleA: "あなたはどの", heroTitleB: "ガールズバンドアニメの", heroTitleC: "どのキャラクター？",
     heroLead: "{total} 問のシーン問題から、バランスよく {count} 問を選び、あなたに近いキャラクターを探します。",
-    rosterLabel: "全キャラクターのローテーション", rosterPrevious: "前の組", rosterNext: "次の組", rosterPause: "ローテーションを停止", rosterResume: "ローテーションを再開", rosterCount: "{current}/{total} 組 · {count} 人", rosterLive: "{current} 組目を表示中：{names}。",
+    rosterLabel: "全キャラクターのローテーション", rosterPrevious: "前の組", rosterNext: "次の組", rosterPause: "ローテーションを停止", rosterResume: "ローテーションを再開", rosterCount: "このラウンド {current}/{total} 組 · {count} 人", rosterLive: "{current} 組目を表示中：{names}。",
     galleryTitle: "67 人のキャラクターをホームで順番に表示します。", galleryCopy: "{series} 作品、{bands} 組のバンド・音楽ユニットを収録。カードから萌娘百科のページを開けます。", bandFilter: "バンドで絞り込む", wiki: "キャラクター Wiki を開く",
     quizProgress: "第 {current} 問 / 全 {total} 問", quizBack: "前の質問へ", quizNote: "第一印象で選んでください。このラウンドは {total} 問のプールから選ばれ、回答はこのブラウザ内だけに保存されます。",
     resultTitle: "あなたの診断結果", retry: "もう一度", official: "公式キャラクターページ", resultWiki: "キャラクター Wiki", score: "共鳴スコア",
@@ -95,7 +95,6 @@ const COPY = {
 };
 
 Object.assign(COPY.sc, {
-  rosterJump: "查看第 {current} 组（{count} 名角色）",
   moreTestsAction: "前往测试镜",
   moreTestsTitle: "继续发现你的下一场测试",
   moreTestsCopy: "完成这一场以后，不必回到犄角旮旯的链接。这里直接带你去测试镜继续挑下一项。",
@@ -109,7 +108,6 @@ Object.assign(COPY.sc, {
 });
 
 Object.assign(COPY.tc, {
-  rosterJump: "查看第 {current} 組（{count} 名角色）",
   moreTestsAction: "前往測試鏡",
   moreTestsTitle: "繼續找到下一場測驗",
   moreTestsCopy: "完成這一場以後，不必回到角落裡的連結；這裡直接帶你去測試鏡挑下一項。",
@@ -123,7 +121,6 @@ Object.assign(COPY.tc, {
 });
 
 Object.assign(COPY.en, {
-  rosterJump: "Show set {current} ({count} characters)",
   moreTestsAction: "Open Mirror-Test",
   moreTestsTitle: "Find your next test",
   moreTestsCopy: "Do not hunt for a small return link after this test. Pick your next playful match directly from Mirror-Test.",
@@ -137,7 +134,6 @@ Object.assign(COPY.en, {
 });
 
 Object.assign(COPY.ja, {
-  rosterJump: "{current} 組目を表示（{count} 人）",
   moreTestsAction: "テスト鏡を開く",
   moreTestsTitle: "次の診断を見つける",
   moreTestsCopy: "小さな戻るリンクを探す必要はありません。ここからテスト鏡の次の診断へ進めます。",

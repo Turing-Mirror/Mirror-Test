@@ -2478,7 +2478,7 @@ img {
 
 .art-controls {
   right: 14px;
-  bottom: 12px;
+  bottom: 32px;
   left: 34px;
   z-index: 7;
   padding: 0;
@@ -2491,43 +2491,6 @@ img {
   letter-spacing: 0.08em;
 }
 
-.stage-pagination {
-  position: absolute;
-  right: 14px;
-  bottom: 61px;
-  left: 58px;
-  z-index: 7;
-  display: flex;
-  gap: 5px;
-  overflow-x: auto;
-  padding-bottom: 3px;
-  scrollbar-width: thin;
-}
-
-.stage-page {
-  width: 25px;
-  min-width: 25px;
-  height: 23px;
-  padding: 0;
-  border: 1px solid #b7ac9d;
-  background: #f5f0e6;
-  color: #70665c;
-  cursor: pointer;
-  font-family: ui-monospace, "Cascadia Code", monospace;
-  font-size: 9px;
-  font-weight: 800;
-}
-
-.stage-page.is-active {
-  border-color: #171411;
-  background: #171411;
-  color: #fffdf8;
-}
-
-.stage-page:hover {
-  border-color: #d9422e;
-  color: #d9422e;
-}
 
 .more-tests-section {
   padding: 82px max(24px, calc((100vw - 1290px) / 2));
@@ -2798,15 +2761,10 @@ img {
     left: 0;
   }
 
-  .stage-pagination {
-    right: 0;
-    bottom: 52px;
-    left: 34px;
-  }
 
   .art-controls {
     right: 0;
-    bottom: 5px;
+    bottom: 18px;
     left: 0;
   }
 

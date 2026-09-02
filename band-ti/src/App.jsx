@@ -3,7 +3,7 @@ import { archetypeCopy, catalogSummary, characters } from "./data/characters.js"
 import { getWikiLink } from "./data/wiki.js";
 import { BandLocaleProvider, LanguageSelect, useBandLocale } from "./locale.jsx";
 import { QUESTION_COUNT, createQuestionSet, questionBank } from "./data/questions.js";
-import { HERO_ROTATION_DELAY, heroCharacterGroups } from "./data/hero-roster.js";
+import { createHeroCharacterGroups, HERO_ROTATION_DELAY } from "./data/hero-roster.js";
 
 const traitDetails = [
   { label: "行动", summary: "你会先让事情动起来，把犹豫变成现场能回应的第一步。" },
@@ -173,26 +173,47 @@ function HeroStageCard({ character, index }) {
   );
 }
 
+function createHeroRoster(round = 1) {
+  return {
+    activeGroup: 0,
+    groups: createHeroCharacterGroups(),
+    round,
+  };
+}
+
+function advanceHeroRoster(current) {
+  const nextGroup = current.activeGroup + 1;
+  if (nextGroup < current.groups.length) {
+    return { ...current, activeGroup: nextGroup };
+  }
+
+  return createHeroRoster(current.round + 1);
+}
+
 function HeroArt() {
-  const [activeGroup, setActiveGroup] = useState(0);
+  const [roster, setRoster] = useState(createHeroRoster);
   const [isPaused, setIsPaused] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const prefersReducedMotion = useReducedMotion();
   const { t } = useBandLocale();
+  const { activeGroup, groups: heroCharacterGroups, round } = roster;
   const rotationStopped = prefersReducedMotion || isPaused || isHovering;
   const currentCharacters = heroCharacterGroups[activeGroup];
 
   function showNextGroup() {
-    setActiveGroup((current) => (current + 1) % heroCharacterGroups.length);
+    setRoster(advanceHeroRoster);
   }
 
   function showPreviousGroup() {
-    setActiveGroup((current) => (current - 1 + heroCharacterGroups.length) % heroCharacterGroups.length);
+    setRoster((current) => ({
+      ...current,
+      activeGroup: (current.activeGroup - 1 + current.groups.length) % current.groups.length,
+    }));
   }
 
   useEffect(() => {
     if (rotationStopped) return undefined;
-    const rotationTimer = window.setInterval(showNextGroup, HERO_ROTATION_DELAY);
+    const rotationTimer = window.setInterval(() => setRoster(advanceHeroRoster), HERO_ROTATION_DELAY);
     return () => window.clearInterval(rotationTimer);
   }, [rotationStopped]);
 
@@ -202,7 +223,7 @@ function HeroArt() {
       const upcomingImage = new Image();
       upcomingImage.src = character.image;
     });
-  }, [activeGroup]);
+  }, [activeGroup, heroCharacterGroups]);
 
   return (
     <div
@@ -215,7 +236,7 @@ function HeroArt() {
     >
       <div className="art-note art-note-top">GIRL BAND ANIME / 67 CHARACTERS</div>
       <div className="art-note art-note-bottom">YOUR SOUND / YOUR STORY</div>
-      <div className={`hero-stage hero-stage-count-${currentCharacters.length}`} key={activeGroup}>
+      <div className={`hero-stage hero-stage-count-${currentCharacters.length}`} key={[round, activeGroup].join("-")}>
         {currentCharacters.map((character, index) => <HeroStageCard character={character} index={index} key={character.id} />)}
       </div>
       <div className="art-controls" aria-label={t("rosterLabel")}>
@@ -229,20 +250,6 @@ function HeroArt() {
             </button>
           )}
         </div>
-      </div>
-      <div className="stage-pagination" aria-label={t("rosterLabel")}>
-        {heroCharacterGroups.map((group, index) => (
-          <button
-            className={index === activeGroup ? "stage-page is-active" : "stage-page"}
-            type="button"
-            key={group[0].id}
-            aria-label={t("rosterJump", { current: index + 1, count: group.length })}
-            aria-pressed={index === activeGroup}
-            onClick={() => setActiveGroup(index)}
-          >
-            {String(index + 1).padStart(2, "0")}
-          </button>
-        ))}
       </div>
       <p className="screen-reader-text" aria-live="polite" aria-atomic="true">
         {t("rosterLive", { current: activeGroup + 1, names: currentCharacters.map((character) => character.name).join("、") })}
