@@ -3,6 +3,7 @@ import { archetypeCopy, catalogSummary, characters } from "./data/characters.js"
 import { getWikiLink } from "./data/wiki.js";
 import { BandLocaleProvider, LanguageSelect, useBandLocale } from "./locale.jsx";
 import { QUESTION_COUNT, createQuestionSet, questionBank } from "./data/questions.js";
+import { HERO_ROTATION_DELAY, heroCharacterGroups } from "./data/hero-roster.js";
 
 const traitDetails = [
   { label: "行动", summary: "你会先让事情动起来，把犹豫变成现场能回应的第一步。" },
@@ -12,14 +13,12 @@ const traitDetails = [
   { label: "坚定", summary: "你会为真正认定的事情持续用力，在逆风里也不轻易松手。" },
 ];
 const traitLabels = traitDetails.map((trait) => trait.label);
-const HERO_GROUP_SIZE = 8;
-const heroCharacterGroups = Array.from(
-  { length: Math.ceil(characters.length / HERO_GROUP_SIZE) },
-  (_, index) => characters.slice(index * HERO_GROUP_SIZE, index * HERO_GROUP_SIZE + HERO_GROUP_SIZE),
-);
-const heroRotationDelay = 4600;
 const QQ_GROUP_ID = "1077458748";
 const communityQrUrl = import.meta.env.BASE_URL + "assets/qq_group.jpg";
+const otherTests = [
+  { id: "anime", href: "/anime-summer-2026/", titleKey: "otherTestAnimeTitle", copyKey: "otherTestAnimeCopy", index: "02" },
+  { id: "galgame", href: "/galgame-test/", titleKey: "otherTestGalgameTitle", copyKey: "otherTestGalgameCopy", index: "03" },
+];
 
 function getResult(answers) {
   const traitScore = answers.reduce(
@@ -148,6 +147,32 @@ function StatBlock() {
   );
 }
 
+function HeroStageCard({ character, index }) {
+  const [orientation, setOrientation] = useState("portrait");
+
+  function updateOrientation(event) {
+    const { naturalWidth, naturalHeight } = event.currentTarget;
+    setOrientation(naturalWidth > naturalHeight ? "landscape" : "portrait");
+  }
+
+  return (
+    <a
+      className={`hero-stage-card hero-stage-card-${index} hero-stage-card-${orientation}`}
+      href={getWikiLink(character) || character.officialUrl}
+      target="_blank"
+      rel="noreferrer"
+      style={{ "--roster-delay": `${index * 90}ms` }}
+      aria-label={`${character.name} · ${character.band}`}
+    >
+      <img decoding="async" fetchPriority={index === 0 ? "high" : "auto"} src={character.image} alt={`${character.name}，${character.band}`} onLoad={updateOrientation} />
+      <span className="hero-stage-card-meta">
+        <strong>{character.name}</strong>
+        <small>{character.band}</small>
+      </span>
+    </a>
+  );
+}
+
 function HeroArt() {
   const [activeGroup, setActiveGroup] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -167,7 +192,7 @@ function HeroArt() {
 
   useEffect(() => {
     if (rotationStopped) return undefined;
-    const rotationTimer = window.setInterval(showNextGroup, heroRotationDelay);
+    const rotationTimer = window.setInterval(showNextGroup, HERO_ROTATION_DELAY);
     return () => window.clearInterval(rotationTimer);
   }, [rotationStopped]);
 
@@ -190,24 +215,8 @@ function HeroArt() {
     >
       <div className="art-note art-note-top">GIRL BAND ANIME / 67 CHARACTERS</div>
       <div className="art-note art-note-bottom">YOUR SOUND / YOUR STORY</div>
-      <div className="hero-roster-grid" key={activeGroup}>
-        {currentCharacters.map((character, index) => (
-          <a
-            className="hero-roster-card"
-            href={getWikiLink(character) || character.officialUrl}
-            key={character.id}
-            target="_blank"
-            rel="noreferrer"
-            style={{ "--roster-delay": `${index * 55}ms` }}
-            aria-label={`${character.name} · ${character.band} · ${t("wiki")}`}
-          >
-            <img decoding="async" src={character.image} alt={`${character.name}，${character.band}`} />
-            <span className="hero-roster-card-meta">
-              <strong>{character.name}</strong>
-              <small>{character.band}</small>
-            </span>
-          </a>
-        ))}
+      <div className={`hero-stage hero-stage-count-${currentCharacters.length}`} key={activeGroup}>
+        {currentCharacters.map((character, index) => <HeroStageCard character={character} index={index} key={character.id} />)}
       </div>
       <div className="art-controls" aria-label={t("rosterLabel")}>
         <p className="art-counter" aria-hidden="true">{t("rosterCount", { current: activeGroup + 1, total: heroCharacterGroups.length, count: currentCharacters.length })}</p>
@@ -221,10 +230,54 @@ function HeroArt() {
           )}
         </div>
       </div>
+      <div className="stage-pagination" aria-label={t("rosterLabel")}>
+        {heroCharacterGroups.map((group, index) => (
+          <button
+            className={index === activeGroup ? "stage-page is-active" : "stage-page"}
+            type="button"
+            key={group[0].id}
+            aria-label={t("rosterJump", { current: index + 1, count: group.length })}
+            aria-pressed={index === activeGroup}
+            onClick={() => setActiveGroup(index)}
+          >
+            {String(index + 1).padStart(2, "0")}
+          </button>
+        ))}
+      </div>
       <p className="screen-reader-text" aria-live="polite" aria-atomic="true">
         {t("rosterLive", { current: activeGroup + 1, names: currentCharacters.map((character) => character.name).join("、") })}
       </p>
     </div>
+  );
+}
+
+function MoreTestsShowcase() {
+  const { t } = useBandLocale();
+
+  return (
+    <section className="more-tests-section" id="more-tests" aria-labelledby="more-tests-title">
+      <div className="more-tests-heading">
+        <p className="eyebrow">MIRROR-TEST / DISCOVER</p>
+        <h2 id="more-tests-title">{t("moreTestsTitle")}</h2>
+        <p>{t("moreTestsCopy")}</p>
+      </div>
+      <div className="more-tests-grid">
+        {otherTests.map((test) => (
+          <a className="more-test-card" href={test.href} key={test.id}>
+            <span>NO. {test.index}</span>
+            <strong>{t(test.titleKey)}</strong>
+            <p>{t(test.copyKey)}</p>
+            <b>{t("moreTestsGo")}</b>
+          </a>
+        ))}
+        <a className="more-tests-directory" href="/">
+          <span>TEST.TURINGMIRROR.COM</span>
+          <strong>{t("moreTests")}</strong>
+          <p>{t("moreTestsDirectoryCopy")}</p>
+          <b>{t("moreTestsGo")}</b>
+        </a>
+      </div>
+    </section>
   );
 }
 
@@ -278,20 +331,22 @@ function Home({ onStart }) {
             <p className="hero-lede">{t("heroLead", { total: questionBank.length, count: QUESTION_COUNT })}</p>
             <div className="hero-actions">
               <button className="primary-button" type="button" onClick={onStart}>{t("start")} · {QUESTION_COUNT} 题</button>
-              <button className="text-button" type="button" onClick={() => scrollToSection("gallery")}>{t("library")}</button>
+              <a className="hero-more-tests-button" href="/"><span>MORE TESTS</span><strong>{t("moreTests")}</strong><small>{t("moreTestsAction")}</small></a>
             </div>
+            <button className="text-button hero-library-link" type="button" onClick={() => scrollToSection("gallery")}>{t("library")}</button>
             <StatBlock />
           </div>
           <HeroArt />
         </div>
       </section>
+      <MoreTestsShowcase />
       <section className="about-section" id="about" aria-labelledby="about-title">
         <div className="about-number">01</div>
         <div><p className="eyebrow">HOW IT WORKS</p><h2 id="about-title">不是贴标签，而是一次为当下心情留存的乐队选曲。</h2></div>
         <div className="about-copy"><p>测试把每一道题的选择映射为行动、共鸣、专注、直觉与坚定五种倾向，并与本地角色库中的角色特征进行匹配。</p><p>结果仅供娱乐，不代表真实人格判断。角色名称、作品与图片的权利归各官方权利方所有。</p></div>
       </section>
       <Gallery />
-      <footer className="site-footer"><p>GIRL BAND CHARACTER QUIZ</p><p>非官方粉丝向测试。图片来源见各作品官方角色页。</p><a className="footer-more-tests" href="/">{t("footerMoreTests")} →</a></footer>
+      <footer className="site-footer"><p>GIRL BAND CHARACTER QUIZ</p><p>非官方粉丝向测试。图片来源见各作品官方角色页。</p><a className="footer-more-tests" href="/"><span>MORE TESTS</span><strong>{t("footerMoreTests")}</strong><small>{t("moreTestsAction")}</small></a></footer>
     </>
   );
 }
@@ -497,7 +552,8 @@ function Result({ result, onRestart, onHome }) {
           <p className="result-meta">{character.series} · {character.band} · {character.role}</p>
           <p className="result-description">{archetype.description}</p><p className="result-detail">这轮 {result.questionCount} 个选择里，{primaryTrait.summary} 同时，{secondaryTrait.summary}</p>
           <div className="result-score-dossier"><div className="result-score-card"><span>{t("score")}</span><strong>{result.matchPercent}<small>%</small></strong><p>与 {character.name} 的特质向量计算得出</p></div><dl className="result-dossier-list"><div><dt>作品</dt><dd>{character.series}</dd></div><div><dt>乐队</dt><dd>{character.band}</dd></div><div><dt>担任</dt><dd>{character.role}</dd></div></dl></div>
-          <div className="result-actions"><button className="primary-button" type="button" onClick={onRestart}>{t("retry")}</button><a className="text-button external-link" href={character.officialUrl} target="_blank" rel="noreferrer">{t("official")}</a><a className="text-button external-link" href={getWikiLink(character) || character.officialUrl} target="_blank" rel="noreferrer">{t("resultWiki")}</a><a className="more-tests-button" href="/">{t("moreTests")} →</a></div>
+          <div className="result-actions"><button className="primary-button" type="button" onClick={onRestart}>{t("retry")}</button><a className="text-button external-link" href={character.officialUrl} target="_blank" rel="noreferrer">{t("official")}</a><a className="text-button external-link" href={getWikiLink(character) || character.officialUrl} target="_blank" rel="noreferrer">{t("resultWiki")}</a></div>
+          <a className="result-more-tests-cta" href="/"><span>MIRROR-TEST / MORE</span><strong>{t("moreTests")}</strong><small>{t("resultMoreTestsCopy")}</small></a>
         </div>
       </section>
       <section className="result-lower">
@@ -510,7 +566,7 @@ function Result({ result, onRestart, onHome }) {
       </section>
       <div className="result-poster-capture" aria-hidden="true"><ResultPoster character={character} result={result} archetype={archetype} primaryTrait={primaryTrait} secondaryTrait={secondaryTrait} qrCodeDataUrl={qrCodeDataUrl} posterRef={posterRef} /></div>
       {posterPreviewUrl && <div className="poster-preview" role="dialog" aria-modal="true" aria-labelledby="poster-preview-title"><button className="poster-preview-backdrop" type="button" aria-label={t("close")} onClick={() => setPosterPreviewUrl("")} /><div className="poster-preview-panel"><div className="poster-preview-head"><div><p id="poster-preview-title">{t("previewTitle")}</p><span>{t("previewHint")}</span></div><button className="poster-preview-close" type="button" onClick={() => setPosterPreviewUrl("")}>{t("close")}</button></div><img src={posterPreviewUrl} alt={`${character.name} 的少女乐队角色测试结果图`} /></div></div>}
-      <footer className="site-footer result-footer"><p>本测试仅供娱乐。角色与图片的权利归各官方权利方所有。</p><a className="footer-more-tests" href="/">{t("footerMoreTests")} →</a></footer>
+      <footer className="site-footer result-footer"><p>本测试仅供娱乐。角色与图片的权利归各官方权利方所有。</p><a className="footer-more-tests" href="/"><span>MORE TESTS</span><strong>{t("footerMoreTests")}</strong><small>{t("moreTestsAction")}</small></a></footer>
     </main>
   );
 }

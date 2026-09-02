@@ -1,4 +1,4 @@
-const assetBase = import.meta.env.BASE_URL;
+const assetBase = import.meta.env?.BASE_URL ?? "/";
 
 const profiles = {
   spark: [5, 3, 2, 4, 4],

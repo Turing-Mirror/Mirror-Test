@@ -2229,3 +2229,629 @@ img {
     animation: none;
   }
 }
+
+/* 2026-09-02: editorial stage and explicit Mirror-Test discovery */
+.hero {
+  min-height: 930px;
+  padding-bottom: 0;
+}
+
+.hero-content {
+  grid-template-columns: minmax(0, 0.92fr) minmax(540px, 1.08fr);
+  gap: clamp(34px, 5vw, 84px);
+  min-height: 825px;
+}
+
+.hero-copy {
+  max-width: 650px;
+  padding: 102px 0 76px;
+}
+
+.hero h1 {
+  max-width: 720px;
+  font-size: clamp(54px, 5.4vw, 94px);
+}
+
+.hero-lede {
+  margin-top: 31px;
+}
+
+.hero-actions {
+  align-items: stretch;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.hero .primary-button,
+.hero-more-tests-button {
+  min-height: 68px;
+}
+
+.hero .primary-button {
+  min-width: 196px;
+  padding-inline: 28px;
+}
+
+.hero .primary-button:hover {
+  background: #d9422e;
+  transform: none;
+}
+
+.hero-more-tests-button {
+  display: grid;
+  min-width: 226px;
+  padding: 11px 17px;
+  border: 1px solid #171411;
+  background: #171411;
+  color: #fffdf8;
+  text-decoration: none;
+}
+
+.hero-more-tests-button span,
+.hero-more-tests-button small {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.hero-more-tests-button strong {
+  margin-top: 3px;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.hero-more-tests-button small {
+  margin-top: 5px;
+  color: #d9d0c5;
+  letter-spacing: 0.05em;
+}
+
+.hero-more-tests-button:hover {
+  color: #fffdf8;
+}
+
+.hero-library-link {
+  margin-top: 17px;
+}
+
+.hero-stats {
+  margin-top: 51px;
+}
+
+.hero-art {
+  width: min(100%, 730px);
+  min-height: 760px;
+  margin: 0 auto;
+  padding: 58px 0 130px;
+}
+
+.art-note-top {
+  top: 4px;
+  right: 14px;
+}
+
+.art-note-bottom {
+  bottom: 122px;
+  left: 12px;
+}
+
+.hero-stage {
+  position: relative;
+  z-index: 2;
+  min-height: 585px;
+  margin: 20px 34px 0;
+}
+
+.hero-stage-card {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #171411;
+  color: #fffdf8;
+  text-decoration: none;
+  box-shadow: 8px 10px 0 rgba(23, 20, 17, 0.12);
+  opacity: 0;
+  animation: stage-card-in 640ms cubic-bezier(0.2, 0.72, 0.24, 1) forwards;
+  animation-delay: var(--roster-delay, 0ms);
+}
+
+.hero-stage-card-0 {
+  top: 12%;
+  left: 0;
+  width: 39%;
+  height: 56%;
+  z-index: 2;
+  background: #ddd2c1;
+  transform: rotate(3deg);
+}
+
+.hero-stage-card-1 {
+  top: 0;
+  right: 3%;
+  width: 44%;
+  height: 54%;
+  z-index: 1;
+  background: #292521;
+  transform: rotate(-3deg);
+}
+
+.hero-stage-card-2 {
+  bottom: 0;
+  left: 22%;
+  width: 53%;
+  height: 67%;
+  z-index: 4;
+  background: #d9422e;
+  transform: rotate(-1deg);
+}
+
+.hero-stage-card-3 {
+  right: 0;
+  bottom: 9%;
+  width: 35%;
+  height: 46%;
+  z-index: 5;
+  background: #e7dfd1;
+  transform: rotate(4deg);
+}
+
+.hero-stage-count-3 .hero-stage-card-0 {
+  top: 7%;
+  left: 2%;
+  width: 42%;
+  height: 57%;
+}
+
+.hero-stage-count-3 .hero-stage-card-1 {
+  top: 12%;
+  right: 2%;
+  width: 44%;
+  height: 60%;
+  z-index: 3;
+}
+
+.hero-stage-count-3 .hero-stage-card-2 {
+  bottom: 0;
+  left: 22%;
+  width: 56%;
+  height: 66%;
+}
+
+.hero-stage-card img {
+  width: 100%;
+  height: 100%;
+  object-position: center bottom;
+}
+
+.hero-stage-card-portrait img {
+  object-fit: contain;
+}
+
+.hero-stage-card-landscape img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-stage-card-meta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  gap: 2px;
+  padding: 9px 10px;
+  background: rgba(23, 20, 17, 0.84);
+}
+
+.hero-stage-card-meta strong {
+  overflow: hidden;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 17px;
+  letter-spacing: -0.045em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero-stage-card-meta small {
+  overflow: hidden;
+  color: rgba(255, 253, 248, 0.76);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes stage-card-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0) rotate(0deg);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.art-controls {
+  right: 14px;
+  bottom: 12px;
+  left: 34px;
+  z-index: 7;
+  padding: 0;
+}
+
+.art-counter {
+  color: #171411;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.stage-pagination {
+  position: absolute;
+  right: 14px;
+  bottom: 61px;
+  left: 58px;
+  z-index: 7;
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding-bottom: 3px;
+  scrollbar-width: thin;
+}
+
+.stage-page {
+  width: 25px;
+  min-width: 25px;
+  height: 23px;
+  padding: 0;
+  border: 1px solid #b7ac9d;
+  background: #f5f0e6;
+  color: #70665c;
+  cursor: pointer;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.stage-page.is-active {
+  border-color: #171411;
+  background: #171411;
+  color: #fffdf8;
+}
+
+.stage-page:hover {
+  border-color: #d9422e;
+  color: #d9422e;
+}
+
+.more-tests-section {
+  padding: 82px max(24px, calc((100vw - 1290px) / 2));
+  color: #fffdf8;
+  background: #171411;
+}
+
+.more-tests-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(280px, 0.56fr);
+  gap: 20px clamp(28px, 7vw, 110px);
+  align-items: end;
+}
+
+.more-tests-heading .eyebrow {
+  grid-column: 1 / -1;
+  color: #d9422e;
+}
+
+.more-tests-heading h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: clamp(42px, 5vw, 76px);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  line-height: 0.96;
+}
+
+.more-tests-heading > p:last-child {
+  max-width: 410px;
+  margin: 0;
+  color: #cfc4b8;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.more-tests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 44px;
+}
+
+.more-test-card,
+.more-tests-directory {
+  display: flex;
+  min-height: 244px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  border: 1px solid #605850;
+  color: #fffdf8;
+  text-decoration: none;
+}
+
+.more-test-card {
+  background: #292521;
+}
+
+.more-tests-directory {
+  border-color: #d9422e;
+  background: #d9422e;
+}
+
+.more-test-card > span,
+.more-tests-directory > span {
+  color: #c4b9ac;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.more-tests-directory > span {
+  color: rgba(255, 253, 248, 0.82);
+}
+
+.more-test-card strong,
+.more-tests-directory strong {
+  margin-top: 38px;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1.04;
+}
+
+.more-test-card p,
+.more-tests-directory p {
+  margin: 14px 0 0;
+  color: #cfc4b8;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.more-tests-directory p {
+  color: rgba(255, 253, 248, 0.86);
+}
+
+.more-test-card b,
+.more-tests-directory b {
+  margin-top: auto;
+  padding-top: 19px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.more-test-card:hover {
+  border-color: #d9422e;
+}
+
+.result-more-tests-cta {
+  display: grid;
+  gap: 5px;
+  margin-top: 28px;
+  padding: 20px 22px;
+  border: 1px solid #171411;
+  background: #171411;
+  color: #fffdf8;
+  text-decoration: none;
+}
+
+.result-more-tests-cta span,
+.result-more-tests-cta small {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.result-more-tests-cta strong {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+
+.result-more-tests-cta small {
+  color: #d2c8bc;
+  letter-spacing: 0.02em;
+}
+
+.result-more-tests-cta:hover {
+  color: #fffdf8;
+}
+
+.site-footer {
+  align-items: center;
+}
+
+.footer-more-tests {
+  display: grid;
+  min-width: 218px;
+  gap: 4px;
+  margin-left: auto;
+  padding: 13px 16px;
+  border: 1px solid #d9422e;
+  background: #d9422e;
+  color: #fffdf8;
+  text-decoration: none;
+}
+
+.footer-more-tests span,
+.footer-more-tests small {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.footer-more-tests strong {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.footer-more-tests small {
+  color: rgba(255, 253, 248, 0.84);
+  letter-spacing: 0.02em;
+}
+
+.footer-more-tests:hover {
+  color: #fffdf8;
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    min-height: 0;
+    padding-bottom: 52px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+    padding: 72px 0 22px;
+  }
+
+  .hero-art {
+    margin-top: 8px;
+  }
+
+  .more-tests-section {
+    padding-inline: 48px;
+  }
+
+  .more-tests-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .more-tests-directory {
+    grid-column: 1 / -1;
+    min-height: 178px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 18px 22px 40px;
+  }
+
+  .hero-copy {
+    padding-top: 58px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 11.5vw, 55px);
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero .primary-button,
+  .hero-more-tests-button {
+    width: 100%;
+  }
+
+  .hero-art {
+    min-height: 620px;
+    padding: 50px 0 112px;
+  }
+
+  .hero-stage {
+    min-height: 460px;
+    margin: 12px 12px 0;
+  }
+
+  .hero-stage-card-meta {
+    padding: 7px;
+  }
+
+  .hero-stage-card-meta strong {
+    font-size: 14px;
+  }
+
+  .art-note-top {
+    right: 0;
+    font-size: 8px;
+  }
+
+  .art-note-bottom {
+    bottom: 106px;
+    left: 0;
+  }
+
+  .stage-pagination {
+    right: 0;
+    bottom: 52px;
+    left: 34px;
+  }
+
+  .art-controls {
+    right: 0;
+    bottom: 5px;
+    left: 0;
+  }
+
+  .more-tests-section {
+    padding: 60px 22px;
+  }
+
+  .more-tests-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .more-tests-grid {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+
+  .more-test-card,
+  .more-tests-directory {
+    min-height: 184px;
+  }
+
+  .more-test-card strong,
+  .more-tests-directory strong {
+    margin-top: 23px;
+  }
+
+  .site-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .footer-more-tests {
+    width: 100%;
+    min-width: 0;
+    margin: 4px 0 0;
+  }
+
+  .result-more-tests-cta {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stage-card {
+    opacity: 1;
+    animation: none;
+  }
+}

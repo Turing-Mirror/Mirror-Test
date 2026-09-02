@@ -1,55 +1,57 @@
 # Design QA
 
-Date: 2026-09-01
+Date: 2026-09-02
 
 ## Scope
 
-- 48-question categorized bank with a balanced, deterministic 20-question session per run.
-- Expanded result dossier: calculated resonance index, primary and secondary traits, four close matches, and two contrast voices.
-- Locally generated QR code, result-poster preview, and PNG download using existing local official character art.
+- Target surface: Band-TI desktop home page at /band-ti/.
+- Source visual truth: user-provided editorial reference C:\Users\Ka251\AppData\Local\Temp\codex-clipboard-675f556a-5c46-46e8-821b-98c4924e6d2a.png.
+- Regression evidence: user-provided current-state screenshots C:\Users\Ka251\AppData\Local\Temp\codex-clipboard-616bee0d-0bcc-4e3e-b658-b028c092e7a4.png and C:\Users\Ka251\AppData\Local\Temp\codex-clipboard-8a9bee35-cdb3-4881-a4b3-5b4c47fbb7c8.png.
+- Intended changes: left-side editorial copy with two equal primary actions, a layered 3-to-4 character stage instead of a dense grid, and visible More Tests actions on the home page, result page, and footer.
+- Character coverage: 67 local characters partitioned into 17 groups of at most four. Every group can be selected directly.
 
-## Comparison target
+## Implemented changes
 
-- Product reference: the existing result, QR, preview, and download flows in `tests-src/anime-summer-2026/` and `tests-src/galgame-test/`.
-- Band-TI visual language: warm off-white paper, black typography, and restrained cherry-red accent as recorded in `band-ti/AGENTS.md`.
-- Intended implementation viewport: desktop, 1920 by 1080 CSS pixels at device scale factor 1; mobile, 390 by 844 CSS pixels at device scale factor 1.
-- State: completed quiz result with generated QR code, poster preview open, and mobile result layout.
+- Replaced the fixed eight-card roster grid with a layered character stage. Portrait source art uses contain fitting; landscape source art uses cover fitting after its natural dimensions load, preventing the large blank vertical cards visible in the regression screenshot.
+- Reduced the rotation group size to four characters and added 17 direct group controls, previous/next controls, pause/resume, automatic rotation, and reduced-motion handling.
+- Added a large More Tests action beside Start Quiz, a dedicated discovery section linking to the two other live tests and the Mirror-Test directory, a full-width result CTA, and a prominent footer CTA.
+- Added localized copy for Simplified Chinese, Traditional Chinese, English, and Japanese. The existing derived locales inherit the new copy.
+- Added automated coverage to ensure every one of the 67 characters appears exactly once across the rotation groups and that the home/result/footer More Tests surfaces remain present.
+
+## Automated evidence
+
+- npm run test: passed 8 of 8 tests.
+- npm run build: passed for Band-TI and produced dist/client, dist/server/index.js, and dist/.openai/hosting.json.
+- npm run test:sites: passed 4 of 4 checks.
+- Root Mirror-Test build: passed and copied Band-TI into the /band-ti/ deployment route.
 
 ## Rendered implementation evidence
 
-- Local preview was started at `http://127.0.0.1:5173/` and returned HTTP 200.
-- The updated application and question modules returned HTTP 200 from the local preview.
-- QR generator smoke test produced a PNG data URL for the public test path.
-- Implementation screenshots: unavailable. The in-app browser control process exited unexpectedly before it could open the local preview or capture a screenshot.
-- Full-view and focused region comparisons were therefore not made. No code-only inspection was treated as visual QA.
-
-## Implemented interaction checks
-
-- Root production build passed with QR and poster libraries split into on-demand chunks.
-- Automated tests passed: 6 of 6, including question-bank breadth, deterministic balanced sessions, and static-site worker behavior.
-- The question bank contains 48 unique questions across six categories. Each session contains 20 unique questions and at least three questions from each category.
-- The QR generator is local and creates a PNG data URL without an external CDN.
-- The poster path uses only the result data, QR image, and existing same-origin local character art. It does not upload answers or replace official art with generated imagery.
-
-## Findings
-
-- [P1] Browser-rendered comparison remains unavailable.
-  - Location: desktop and mobile result visual QA, QR rendering, poster preview, and downloaded poster composition.
-  - Evidence: browser control exited unexpectedly before local page capture on the current task and the preceding visual task.
-  - Impact: card crop, spacing, responsive layout, QR placement, preview overlay, and final canvas composition cannot be visually certified.
-  - Fix: restore local browser control, complete a 20-question session, capture the stated desktop and mobile states, open a poster preview, download a poster, and compare those captures against the existing test references.
+- Local implementation URL: http://localhost:5173/.
+- Intended desktop viewport: 1920 by 1080 CSS pixels, matching the supplied regression screenshot.
+- Implementation screenshot: unavailable.
+- Browser-rendered capture was blocked before navigation because the available browser-control runtime exited unexpectedly on two fresh connection attempts.
+- No code-only review is counted as visual comparison. The source and implementation were therefore not put into a side-by-side image comparison.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: blocked pending rendered capture.
-- Spacing and layout rhythm: blocked pending rendered capture.
-- Colors and visual tokens: blocked pending rendered capture.
-- Image quality and asset fidelity: local official character assets are retained; final crop and exported-poster quality are blocked pending rendered capture.
-- Copy and content: result copy, score labels, QR explanation, and poster labels are implemented; final hierarchy review is blocked pending rendered capture.
+- Fonts and typography: pending browser-rendered capture.
+- Spacing and layout rhythm: pending browser-rendered capture.
+- Colors and visual tokens: warm off-white, black, and restrained cherry-red were preserved in code; visual confirmation is pending.
+- Image quality and asset fidelity: existing local official character art is retained; orientation-specific fit logic was added, but crop quality requires browser-rendered capture.
+- Copy and content: primary More Tests copy and the two linked tests are present in all supported primary locales; visual hierarchy is pending capture.
+
+## Findings
+
+- [P1] Visual comparison is blocked.
+  - Location: desktop home page and the final three-character rotation state.
+  - Evidence: no browser-rendered implementation screenshot could be captured after the browser-control runtime reset twice.
+  - Impact: the final layered composition, crop behavior, and CTA prominence cannot be certified visually from this environment.
+  - Fix: restore browser capture, load /band-ti/ at 1920 by 1080, capture the initial and final rotation groups, compare them against the supplied reference, and resolve any remaining P1 or P2 differences.
 
 ## Comparison history
 
-1. Initial hero animation QA: local preview started, but no screenshot could be captured because browser control exited unexpectedly.
-2. Expanded-result QA: local preview and module smoke checks passed, but browser control exited unexpectedly again before visual capture.
+1. User-provided regression screenshot showed an eight-card grid and blank vertical cards for landscape Morfonica art. The implementation changed to a layered stage with dimension-aware image fitting and compact groups.
+2. Browser capture attempt after the rebuild was blocked before a screenshot was produced. No visual pass was claimed.
 
 final result: blocked
